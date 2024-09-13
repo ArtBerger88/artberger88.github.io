@@ -4,3 +4,68 @@ body {
     border: 1px solid rgb(0, 240, 0);
     text-align: center;
   }
+
+h1 {
+   font-size: 50px;
+   font-family: 'Times New Roman', Times, serif;
+   font-style: italic;
+   padding-top: 30px;
+
+}
+
+h2 {
+   background-color: #000000;
+   font-size: 50px;
+   font-family: 'Times New Roman', Times, serif;
+   font-style: italic;
+   padding-bottom: 30px;
+   border-bottom:  2px solid #00FF00;
+}
+
+#motto-subtext {
+  font-size: 30px;
+}
+
+.navbar {
+  width: 100%;
+  background-color:#000000;
+  position: fixed;
+  top: 0;
+}
+
+.nav-link {
+  color:#00FF00;
+}
+
+#constructionText {
+    font-size: 35px;
+    color: #FF0000;
+  }
+
+#contacts {
+    color: #00FF00;
+    font-size: 30px;
+    padding-bottom: 50px;
+  }
+
+#motto {
+    color: #00FF00;
+  }
+
+#Services {
+  font-size: 25px;
+  border-bottom:  2px solid #FF0000;
+}
+
+#ServiceList {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+a:hover {
+  color: #FFFFFF;
+}
+
+#li {
+  text-align:center;
+}
