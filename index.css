@@ -14,12 +14,12 @@ h1 {
 }
 
 h2 {
-   background-color: #000000;
    font-size: 50px;
    font-family: 'Times New Roman', Times, serif;
    font-style: italic;
    padding-bottom: 30px;
    border-bottom:  2px solid #00FF00;
+  /* background-image: url(https://i.ibb.co/yp9vXvd/20160505-151327.jpg); */
 }
 
 #motto-subtext {
