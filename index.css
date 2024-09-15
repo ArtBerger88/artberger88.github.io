@@ -26,10 +26,8 @@ h2 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 300px;
-  justify-content: center;
   height: auto;
   display: block;
-  align-self: center;
 }
 
 #motto-subtext {
