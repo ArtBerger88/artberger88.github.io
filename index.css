@@ -23,17 +23,23 @@ h2 {
 }
 
 #imgHead {
-  height: 500px ;
   background-image: url(https://i.ibb.co/yp9vXvd/20160505-151327.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-size: 100%;
   justify-content: center;
-  border-bottom:  2px solid #00FF00;
+  
+  max-width: 100%;
+  height: auto; 
+  display: block; 
+  margin-left: 350px; 
+  margin-right: 350px;
 }
 
 #motto-subtext {
   font-size: 30px;
+  border-top: 2px solid #00FF00;
+  padding-top: 50px;
 }
 
 .navbar {
