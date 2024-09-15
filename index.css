@@ -19,21 +19,17 @@ h2 {
    font-style: italic;
    padding-bottom: 30px;
    
-   
 }
 
 #imgHead {
   background-image: url(https://i.ibb.co/yp9vXvd/20160505-151327.jpg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: 300px;
   justify-content: center;
-  
-  max-width: 100%;
-  height: auto; 
-  display: block; 
-  margin-left: 350px; 
-  margin-right: 350px;
+  height: auto;
+  display: block;
+  align-self: center;
 }
 
 #motto-subtext {
