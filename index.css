@@ -10,7 +10,8 @@ h1 {
    font-family: 'Times New Roman', Times, serif;
    font-style: italic;
    padding-top: 30px;
-
+   color: #000000;
+   text-shadow: 2px 2px 5px #00FF00;
 }
 
 h2 {
@@ -18,7 +19,7 @@ h2 {
    font-family: 'Times New Roman', Times, serif;
    font-style: italic;
    padding-bottom: 30px;
-   
+   color: #000000;
 }
 
 #imgHead {
@@ -30,10 +31,23 @@ h2 {
   display: block;
 }
 
-#motto-subtext {
-  font-size: 30px;
+#motto-subtext1 {
+  font-size: 40px;
   border-top: 2px solid #00FF00;
   padding-top: 50px;
+  font-style: italic;
+  text-shadow: 2px 2px 5px #ffffff;
+}
+
+#citrus-co {
+
+}
+
+#motto-subtext2 {
+  font-size: 40px;
+  padding-top: 50px;
+  font-style: italic;
+  text-shadow: 2px 2px 5px #ffffff;
 }
 
 .navbar {
@@ -56,15 +70,18 @@ h2 {
     color: #00FF00;
     font-size: 30px;
     padding-bottom: 50px;
+    text-shadow: 2px 2px 5px #ffffff;
   }
 
 #motto {
-    color: #00FF00;
+    color: #000000;
+    text-shadow: 2px 2px 5px #00FF00;
   }
 
 #Services {
   font-size: 25px;
-  border-bottom:  2px solid #FF0000;
+  border-bottom:  2px solid #00FF00;
+  text-shadow: 2px 2px 5px #ffffff;
 }
 
 #ServiceList {
@@ -78,8 +95,4 @@ a:hover {
 
 #li {
   text-align:center;
-}
-
-#red {
-  color: red;
 }
