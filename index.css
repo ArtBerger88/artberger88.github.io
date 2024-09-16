@@ -85,6 +85,8 @@ h2 {
     font-size: 30px;
     padding-bottom: 50px;
     text-shadow: 2px 2px 5px #ffffff;
+    border-top: 2px solid #00FF00;
+    padding-top: 50px;
   }
 
 #motto {
