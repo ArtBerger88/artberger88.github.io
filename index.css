@@ -35,6 +35,8 @@ h2 {
   font-size: 20px;
   font-style: italic;
   text-shadow: 2px 2px 5px #ffffff;
+  border-top: 2px solid #00FF00;
+  padding-top: 20px;
 }
 
 #serviceArea {
@@ -46,22 +48,9 @@ h2 {
   text-shadow: 2px 2px 5px #ffffff;
 }
 
-#motto-subtext1 {
-  font-size: 40px;
-  font-style: italic;
-  text-shadow: 2px 2px 5px #ffffff;
-}
-
 #citrus-co {
   height:auto;
-  width:150px;
-}
-
-#motto-subtext2 {
-  font-size: 40px;
-  padding-top: 50px;
-  font-style: italic;
-  text-shadow: 2px 2px 5px #ffffff;
+  width:200px;
 }
 
 .navbar {
@@ -69,16 +58,12 @@ h2 {
   background-color:#000000;
   position: fixed;
   top: 0;
+  font-size: 30px;
 }
 
 .nav-link {
   color:#00FF00;
 }
-
-#constructionText {
-    font-size: 35px;
-    color: #FF0000;
-  }
 
 #contacts {
     color: #00FF00;
@@ -112,4 +97,33 @@ a:hover {
 
 #li {
   text-align:center;
+}
+
+.title-words {
+  font-size: 50px;
+}
+
+#serviceCitys {
+  color:blue;
+}
+
+/*Fade In and Out keyframes*/
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-in-out {
+  animation: fadeIn 4s ease-in, fadeOut 4s ease-out 4s, fadeIn 4s ease-in 4s;
+  animation-fill-mode: forwards;
+}
+
+.tele, .fb {
+  color:#00FFBB
 }
