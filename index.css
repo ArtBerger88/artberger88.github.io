@@ -71,8 +71,7 @@ h2 {
     font-size: 27px;
     padding-bottom: 50px;
     text-shadow: 2px 2px 5px #ffffff;
-    
-    padding-top: 50px;
+    padding-top: 30px;
   }
 
 #motto {
@@ -118,17 +117,17 @@ a:hover {
   animation-fill-mode: forwards;
 }
 
+/*color for clickable links*/
+
 .tele, .fb, .email {
   color:#00FFBB
 }
 
 .imgContainer {
-  
   background-color: #000000;
   display: block;
   padding: 20px;
   padding-top:50px;
-
 }
 
 #img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11 {
@@ -137,7 +136,7 @@ a:hover {
   padding: 30px;
 }
 
-#photo-text, #about-me-text, #ContactUs-FormTitle {
+#photo-text, #about-me-text, #ContactUs-FormTitle, #contact-section {
   border-bottom: 2px solid #00FF00;
   padding-top: 50px;
   font-size: 50px;
@@ -171,9 +170,4 @@ a:hover {
 
 #divider {
   padding-bottom: 30px;
-}
-
-#contact-section {
-  border-bottom: 2px solid #00FF00;
-  font-size:50px;
 }
