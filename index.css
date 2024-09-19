@@ -146,3 +146,7 @@ a:hover {
 .zoom:hover {
   transform: scale(2);
 }
+
+#photo-disclaimer {
+  font-size:10px;
+}
