@@ -118,7 +118,7 @@ a:hover {
   animation-fill-mode: forwards;
 }
 
-.tele, .fb {
+.tele, .fb, .email {
   color:#00FFBB
 }
 
@@ -141,4 +141,8 @@ a:hover {
   border-bottom: 2px solid #00FF00;
   padding-top: 50px;
   font-size: 50px;
+}
+
+.zoom:hover {
+  transform: scale(2);
 }
