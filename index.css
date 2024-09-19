@@ -82,7 +82,7 @@ h2 {
   }
 
 #services {
-  font-size: 25px;
+  font-size: 50px;
   border-bottom:  2px solid #00FF00;
   text-shadow: 2px 2px 5px #ffffff;
 }
@@ -96,10 +96,6 @@ h2 {
 
 a:hover {
   color: #FFFFFF;
-}
-
-.title-words {
-  font-size: 50px;
 }
 
 #serviceCitys {
@@ -144,5 +140,6 @@ a:hover {
 
 #photo-text {
   border-bottom: 2px solid #00FF00;
-  padding-top: 50px
+  padding-top: 50px;
+  font-size: 50px;
 }
