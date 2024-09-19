@@ -3,6 +3,7 @@ body {
     color: #00FF00;
     border: 1px solid rgb(0, 240, 0);
     text-align: center;
+    text-shadow: 2px 2px 5px #ffffff;
   }
 
 h1 {
@@ -32,7 +33,7 @@ h2 {
 }
 
 #about-me {
-  font-size: 20px;
+  font-size: 23px;
   font-style: italic;
   text-shadow: 2px 2px 5px #ffffff;
   border-top: 2px solid #00FF00;
@@ -58,7 +59,7 @@ h2 {
   background-color:#000000;
   position: fixed;
   top: 0;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .nav-link {
@@ -80,7 +81,7 @@ h2 {
     text-shadow: 2px 2px 5px #00FF00;
   }
 
-#Services {
+#services {
   font-size: 25px;
   border-bottom:  2px solid #00FF00;
   text-shadow: 2px 2px 5px #ffffff;
@@ -127,15 +128,21 @@ a:hover {
 }
 
 .imgContainer {
-  border-top: 2px solid #00FF00;
+  
   background-color: #000000;
   display: block;
   padding: 20px;
+  padding-top:50px;
 
 }
 
 #img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11 {
-  max-width: 200px;
+  width: 200px;
   height: 200px;
-  padding: 50px;
+  padding: 30px;
+}
+
+#photo-text {
+  border-bottom: 2px solid #00FF00;
+  padding-top: 50px
 }
