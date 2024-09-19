@@ -137,7 +137,7 @@ a:hover {
   padding: 30px;
 }
 
-#photo-text, #about-me-text {
+#photo-text, #about-me-text, #ContactUs-FormTitle {
   border-bottom: 2px solid #00FF00;
   padding-top: 50px;
   font-size: 50px;
@@ -149,4 +149,24 @@ a:hover {
 
 #photo-disclaimer {
   font-size:10px;
+}
+
+#form {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.form-input {
+  background-color: #91ffa7;
+  height: 24px;
+  width: 300px;
+}
+
+#form-input-area {
+  background-color: #91ffa7;
+  width: 300px;
+}
+
+#divider {
+  padding-bottom: 30px;
 }
