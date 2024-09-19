@@ -63,6 +63,7 @@ h2 {
 
 .nav-link {
   color:#00FF00;
+  padding-right:10px;
 }
 
 #contacts {
@@ -89,14 +90,11 @@ h2 {
   font-size: 20px;
   padding-bottom: 20px;
   text-shadow: 2px 2px 5px #ffffff;
+  padding-top: 20px;
 }
 
 a:hover {
   color: #FFFFFF;
-}
-
-#li {
-  text-align:center;
 }
 
 .title-words {
@@ -126,4 +124,18 @@ a:hover {
 
 .tele, .fb {
   color:#00FFBB
+}
+
+.imgReel {
+  border-top: 2px solid #00FF00;
+  background-color: #000000;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11 {
+  max-width: 400px;
+  max-height:200px;
+  padding: 50px;
 }
