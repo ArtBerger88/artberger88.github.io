@@ -71,7 +71,7 @@ h2 {
     font-size: 27px;
     padding-bottom: 50px;
     text-shadow: 2px 2px 5px #ffffff;
-    border-top: 2px solid #00FF00;
+    
     padding-top: 50px;
   }
 
@@ -151,6 +151,7 @@ a:hover {
   font-size:10px;
 }
 
+/* 
 #form {
   padding-top: 20px;
   font-size: 20px;
@@ -166,7 +167,13 @@ a:hover {
   background-color: #91ffa7;
   width: 300px;
 }
+*/
 
 #divider {
   padding-bottom: 30px;
+}
+
+#contact-section {
+  border-bottom: 2px solid #00FF00;
+  font-size:50px;
 }
