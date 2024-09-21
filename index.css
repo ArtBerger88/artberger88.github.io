@@ -40,7 +40,6 @@ h2 {
 }
 
 #serviceArea {
-  border-top: 2px solid #00FF00;
   font-size: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -112,9 +111,28 @@ a:hover {
   to { opacity: 0; }
 }
 
+/*Blink animation keyframe*/
+
+@keyframes blink-animation {
+  to {
+      visibility: hidden;
+  }
+}
+
+/*Color change animaton keyframe*/
+
+@keyframes colorChange {
+  0% { color: #FF0000; }
+  25% { color: #00FF00; }
+  50% { color: #0000FF; }
+  75% { color: #00FFBB; }
+  100% { color: #FF0000; }
+}
+
 .fade-in-out {
-  animation: fadeIn 4s ease-in, fadeOut 4s ease-out 4s, fadeIn 4s ease-in 4s;
+  animation: fadeOut 4s ease-out 4s, fadeIn 4s ease-in,  fadeOut 4s ease-out 4s,  fadeIn 4s ease-in 4s;
   animation-fill-mode: forwards;
+  animation: colorChange 5s infinite;
 }
 
 /*color for clickable links*/
@@ -168,6 +186,12 @@ a:hover {
 }
 */
 
-#divider {
-  padding-bottom: 30px;
+#welcomeMsg {
+  font-size:30px;
+}
+
+#bookNow {
+  font-size: 50px;
+  font-weight: bold;
+  animation: colorChange 3s infinite;
 }
