@@ -32,6 +32,11 @@ h2 {
   display: block;
 }
 
+#logo {
+  width: 23px;
+  height: 20px;
+}
+
 #about-me {
   font-size: 23px;
   font-style: italic;
