@@ -37,11 +37,16 @@ h2 {
   height: 20px;
 }
 
-#about-me {
+#about-me, #mission {
   font-size: 23px;
   font-style: italic;
   text-shadow: 2px 2px 5px #ffffff;
   padding-top: 10px;
+}
+
+#missionTitle {
+  font-size: 50px;
+  border-bottom:  2px solid #00FF00;
 }
 
 #serviceArea {
