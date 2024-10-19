@@ -69,12 +69,13 @@
             name="EmailForm">
     <div id="divider"></div>
         Name:<br>
-        <input class="form-input" type="text" size="19" name="Contact-Name"><br><br>
+        <input class="form-input" type="text" size="19" name="Contact-Name" required><br><br>
         Email:<br>
-        <input class="form-input" type="email" name="Contact-Email"><br><br> 
+        <input class="form-input" type="email" name="Contact-Email" required><br><br> 
         Message:<br> 
-        <textarea id="form-input-area" name="Contact-Message" rows="6″ cols="20″>
-        </textarea><br><br> 
+        <textarea id="form-input-area" name="Contact-Message" rows="6″ cols="20″ required>
+        </textarea>
+        <p id="message-error"></p><br>
         <button id="submitButton" type="submit" value="Submit"><strong>Send</strong></button>
     </form>
         </section>
