@@ -178,7 +178,7 @@ a:hover {
   font-size:10px;
 }
 
-/* 
+/* */
 #form {
   padding-top: 20px;
   font-size: 20px;
@@ -194,7 +194,15 @@ a:hover {
   background-color: #91ffa7;
   width: 300px;
 }
-*/
+
+#submitButton {
+  color:#00FF00;
+  border-color:#FF0000;
+  background-color: #000000;
+  border-radius: 10px;
+  height: 20px;
+  width: 100px;
+}
 
 #welcomeMsg {
   font-size:30px;

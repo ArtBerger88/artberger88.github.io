@@ -30,16 +30,16 @@
             <p id="serviceAreaSubtext"><span class="fade-in-out">Accepting New Clients</span><br>See if we can service you!!!!!<br>Call or MSG TODAY!!!!!<br><br><a class="tele" href="tel:352-419-1307">352-419-1307</a></p>
         </section>
         <div id="services">Services:</div>  <!--Servive list and photos--> 
-            <li id="ServiceList">Artistic Lawn Cutting</li>
-            <li id="ServiceList">Percise String Trimming / Edging</li>
-            <li id="ServiceList">Landscape Bed Maintenance</li>
-            <li id="ServiceList">Hedge Trimming</li>
-            <li id="ServiceList">Leaf and debris Removal</li>
-            <li id="ServiceList">Flower Plantings / Design</li>
-            <li id="ServiceList">Pathways / Patios</li>
-            <li id="ServiceList">Stonework</li>
-            <li id="ServiceList">Fertilization (1/4 - 1 Ac)</li>
-            <li id="ServiceList">And More....</li>
+                <li id="ServiceList">Artistic Lawn Cutting</li>
+                <li id="ServiceList">Percise String Trimming / Edging</li>
+                <li id="ServiceList">Landscape Bed Maintenance</li>
+                <li id="ServiceList">Hedge Trimming</li>
+                <li id="ServiceList">Leaf and debris Removal</li>
+                <li id="ServiceList">Flower Plantings / Design</li>
+                <li id="ServiceList">Pathways / Patios</li>
+                <li id="ServiceList">Stonework</li>
+                <li id="ServiceList">Fertilization (1/4 - 1 Ac)</li>
+                <li id="ServiceList">And More....</li>
         <div id="photo-text">Photo Gallery:</div>
         <section class="imgContainer" id="images"> <!--Would like a later rendition of a single photo in front with left/right movement options-->
             <img class="zoom" id="img1" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20160415_101345.jpg" alt="3-teir lines">
@@ -60,13 +60,14 @@
         <p id="about-me">I am <strong>Art Berger</strong>, <br>I grew up in Inverness, went to IMS and Citrus High. I started working as a apprentice Spray Technitian at Rainbow Springs Golf and Country Club.<br>I furthured my landscaping knowledge honing my craft, working at a couple commercial landscaping companies and learning the trade inside and out.<br> I became a liscenced Spray Technitian through the Department of Agriculture for Ohio, I've held this liscence for the last 8 years.<br><br> I consider myself a <strong>Lawn Engineer</strong>, just cutting grass doesn't quite describe my <strong>'Works of Art'</strong>. <br>I take pride in my every job and the percision and artistic ability I present through it.<br> With this expertise and knowledge I return back home to Citrus County to start my own Start-up landscaping company -<strong>"The Art of Lawn Care"</strong><br>I am not your average mow and landscape guy, I am the exception.</p>
         <p id="mission"><span id="missionTitle">Mission Statement:</span><br>-To provide the highest Quality work around at an affordable cost.<br>-To bring my hard work ethic, punctuality, experience, trust, and neighbor like mentality to the landscape trade in Citrus County.<br>-To gain long term customers through earned credit, artistic approach, and a reputation built on high quality and value.</p>
         <p id="bookNow">Open for business<br>Give us a call!!!</p>
-    <!-- form for submiting a message to email-need node.js for POST action
+    <!-- form for submiting a message to email-TODO:need js for POST action-->
         <section id="form">
             <div id="ContactUs-FormTitle">Contact Us:</div>
-            <form action="process-form"
-    method="POST"
-    enctype="multipart/form-data"
-    name="EmailForm"><div id="divider"></div>
+            <form id="contact-form" 
+            action="process-form" method="POST"
+            enctype="multipart/form-data"
+            name="EmailForm">
+    <div id="divider"></div>
         Name:<br>
         <input class="form-input" type="text" size="19" name="Contact-Name"><br><br>
         Email:<br>
@@ -74,12 +75,13 @@
         Message:<br> 
         <textarea id="form-input-area" name="Contact-Message" rows="6″ cols="20″>
         </textarea><br><br> 
-        <button type="submit" value="Submit">Send</button>
+        <button id="submitButton" type="submit" value="Submit"><strong>Send</strong></button>
     </form>
         </section>
-    -->
+    
         <p id="contact-section">Contacts:</p>
         <p id="contacts">I can be reached via call or text anytime at <a class="tele" href="tel:352-419-1307">352-419-1307</a><br>By email at <a class="email" href="mailto:artoflawncarellc@gmail.com">artoflawncarellc@gmail.com</a><br>Find us on facebook @<br><a class="fb" target="_blank" href="https://www.facebook.com/profile.php?id=61564736883280">The Art of Lawn Care and Landscaping</a></p>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="index.js"></script>
     </body>
 </html>
