@@ -67,22 +67,22 @@
             action="process-form" method="POST"
             enctype="multipart/form-data"
             name="EmailForm">
-    <div id="divider"></div>
+                <div id="divider"></div>
         Name:<br>
-        <input class="form-input" type="text" size="19" name="Contact-Name" required><br><br>
+                <input class="form-input" type="text" size="19" name="Contact-Name" placeholder="Your Name" required><br><br>
         Email:<br>
-        <input class="form-input" type="email" name="Contact-Email" required><br><br> 
+                <input class="form-input" type="email" name="Contact-Email" placeholder="Your E-mail" required><br><br> 
         Message:<br> 
-        <textarea id="form-input-area" name="Contact-Message" rows="6″ cols="20″ required>
-        </textarea>
-        <p id="message-error"></p><br>
-        <button id="submitButton" type="submit" value="Submit"><strong>Send</strong></button>
-    </form>
+                <textarea id="form-input-area" name="Contact-Message" rows="6″ cols="20″ placeholder="Your Message" required>
+                </textarea>
+                <p id="message-error"></p><br>
+            <button id="submitButton" type="submit" value="Submit"><strong>Send</strong></button>
+            </form>
         </section>
     
-        <p id="contact-section">Contacts:</p>
+        <p id="contact-section">Our Contact Info:</p>
         <p id="contacts">I can be reached via call or text anytime at <a class="tele" href="tel:352-419-1307">352-419-1307</a><br>By email at <a class="email" href="mailto:artoflawncarellc@gmail.com">artoflawncarellc@gmail.com</a><br>Find us on facebook @<br><a class="fb" target="_blank" href="https://www.facebook.com/profile.php?id=61564736883280">The Art of Lawn Care and Landscaping</a></p>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="index.js"></script>
     </body>
-</html>
+</html>    
