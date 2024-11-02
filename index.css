@@ -94,11 +94,13 @@ h2 {
   text-shadow: 2px 2px 5px #ffffff;
 }
 
+
 #ServiceList {
   font-size: 30px;
   padding-bottom: 20px;
   text-shadow: 2px 2px 5px #ffffff;
   padding-top: 20px;
+  justify-content: center;
 }
 
 a:hover {
@@ -158,11 +160,34 @@ a:hover {
   padding-top:50px;
 }
 
-#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12 {
+#img1, #img2, #img3, #img4, #img5, #img6, #img8, #img9, #img10, #img12 {
   width: 200px;
   height: 200px;
   padding: 30px;
   border-radius: 40px;
+}
+
+#img7 {
+  
+  border-radius: 40px;
+}
+
+#img11 {
+  border-radius: 40px;
+}
+
+.list-img:hover {
+  transform: scale(1.25);
+}
+
+.list-img {
+  display: flex;
+  width: 400px;
+  max-width: 100%;
+  height: 700px;
+  max-height: 100%;
+  overflow: hidden;
+  
 }
 
 #photo-text, #about-me-text, #ContactUs-FormTitle, #contact-section {
@@ -229,4 +254,12 @@ a:hover {
   font-size: 50px;
   font-weight: bold;
   animation: colorChange 3s infinite;
+}
+
+.container {
+  display: flex;
+  flex-flow: row ;
+  justify-content: center;
+  align-items: center;
+  
 }
