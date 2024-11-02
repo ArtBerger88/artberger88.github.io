@@ -192,7 +192,11 @@ a:hover {
   font-size: 50px;
 }
 
-.zoom:hover, .list-img:hover{
+.list-img:hover{
+  transform: scale(1.25);
+}
+
+.zoom:hover {
   transform: scale(2);
 }
 
