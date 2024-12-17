@@ -1,4 +1,4 @@
-//this is my java script file // 
+//this is my java script file for email submittion// 
 window.addEventListener('load', function() {
     console.log('Window loaded'); // loaded log
 
