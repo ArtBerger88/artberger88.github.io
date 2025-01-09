@@ -114,14 +114,15 @@ a:hover {
 /*Fade In and Out keyframes*/
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
+
 
 /*Blink animation keyframe*/
 
@@ -160,7 +161,36 @@ a:hover {
   padding-top:50px;
 }
 
-#img1, #img2, #img3, #img4, #img5, #img6, #img8, #img9, #img10, #img12 {
+.fadeImgContainer {
+  position: relative;
+  width: 100%;
+  height: 1150px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*.fadeImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.fadeImg2 {
+  animation-name: fadeOut;
+  animation-delay: 1.5s;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+*/
+#img1, #img2, #img3, #img4, #img5, #img6, #img8, #img9, #img10, #img12, #img13, #img14, #img15, #img16, #img17, #img18, #img19, #img20, #img21 {
   width: 200px;
   height: 200px;
   padding: 30px;
@@ -175,6 +205,21 @@ a:hover {
 #img11 {
   border-radius: 40px;
 }
+/*
+#img13 {
+  position:absolute;
+  opacity: 1;
+  animation-delay: 4s;
+  animation: fadeOut 4s, fadeIn 4s forwards;
+  animation-iteration-count: infinite;
+}
+
+#img14 {
+  animation-delay: 1s;
+  animation: fadeIn 4s, fadeOut 4s forwards;
+  animation-iteration-count: infinite;
+}
+  */
 
 .list-img {
   display: flex;
@@ -186,6 +231,20 @@ a:hover {
   
 }
 
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #00FF00;
+  margin: 10px;
+  position: relative;
+  top: -10%;
+  
+}
+
 #photo-text, #about-me-text, #ContactUs-FormTitle, #contact-section {
   border-bottom: 2px solid #00FF00;
   padding-top: 50px;
@@ -194,6 +253,18 @@ a:hover {
 
 .list-img:hover{
   transform: scale(1.25);
+}
+
+.fadeImg:hover{
+  transform: scale(2);
+}
+
+.fadeImg2:hover{
+  transform: scale(2);
+}
+
+#beforeAfter {
+    font-size: 25px
 }
 
 .zoom:hover {
