@@ -164,7 +164,7 @@ a:hover {
 .fadeImgContainer {
   position: relative;
   width: 100%;
-  height: 1150px;
+  height: 100%;
   display: inline-block;
   vertical-align: middle;
 }
