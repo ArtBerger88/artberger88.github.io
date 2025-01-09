@@ -241,7 +241,8 @@ a:hover {
   border-color: transparent transparent transparent #00FF00;
   margin: 10px;
   position: relative;
-  top: -10%;
+  top: 50%;
+  transform: translateY(-600%);
   
 }
 
@@ -275,7 +276,6 @@ a:hover {
   font-size:10px;
 }
 
-/* */
 #form {
   padding-top: 20px;
   font-size: 20px;
