@@ -189,23 +189,7 @@ a:hover {
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
-*/
-#img1, #img2, #img3, #img4, #img5, #img6, #img8, #img9, #img10, #img12, #img13, #img14, #img15, #img16, #img17, #img18, #img19, #img20, #img21 {
-  width: 200px;
-  height: 200px;
-  padding: 30px;
-  border-radius: 40px;
-}
 
-#img7 {
-  
-  border-radius: 40px;
-}
-
-#img11 {
-  border-radius: 40px;
-}
-/*
 #img13 {
   position:absolute;
   opacity: 1;
@@ -220,6 +204,18 @@ a:hover {
   animation-iteration-count: infinite;
 }
   */
+#img1, #img2, #img3, #img4, #img5, #img6, #img8, #img9, #img10, #img12, #img13, #img14, #img15, #img16, #img17, #img18, #img19, #img20, #img21 {
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+  border-radius: 40px;
+}
+
+#img7, #img11 {
+  
+  border-radius: 40px;
+}
+
 
 .list-img {
   display: flex;
@@ -274,6 +270,7 @@ a:hover {
 
 #photo-disclaimer {
   font-size:10px;
+  padding-top: 50px;
 }
 
 #form {
