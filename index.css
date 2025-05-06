@@ -94,7 +94,6 @@ h2 {
   text-shadow: 2px 2px 5px #ffffff;
 }
 
-
 #ServiceList {
   font-size: 30px;
   padding-bottom: 20px;
@@ -258,15 +257,7 @@ a:hover {
   transform: scale(1.25);
 }
 
-.fadeImg:hover{
-  transform: scale(2);
-}
-
-.fadeImg2:hover{
-  transform: scale(2);
-}
-
-.zoom:hover {
+.fadeImg:hover, .fadeImg2:hover, .zoom:hover{
   transform: scale(2);
 }
 
