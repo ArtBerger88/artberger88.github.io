@@ -266,10 +266,6 @@ a:hover {
   transform: scale(2);
 }
 
-#beforeAfter {
-    font-size: 25px
-}
-
 .zoom:hover {
   transform: scale(2);
 }
@@ -320,7 +316,7 @@ a:hover {
   border: 2px solid #FF0000;
 }
 
-#welcomeMsg {
+#welcomeMsg, #beforeAfter {
   font-size:30px;
 }
 
