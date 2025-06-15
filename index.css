@@ -324,3 +324,16 @@ a:hover {
   align-items: center;
   
 }
+
+#reviewBody {
+  font-size: 30px;
+}
+
+.review_http {
+  color:#00FFBB;
+}
+
+#reviewSectionTitle {
+  font-size: 50px;
+  border-bottom: 2px solid #00FF00;
+}
