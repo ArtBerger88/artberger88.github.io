@@ -12,6 +12,7 @@
             <a class="nav-link" href="#companyName">Welcome</a>  
             <a class="nav-link" href="#services">Services</a>
             <a class="nav-link" href="#about-me">About Me</a>
+            <a class="nav-link" href="#payments">Payments</a>
             <a class="nav-link" href="#review">Review</a>
             <a class="nav-link" href="#images">Gallery</a>
             <a class="nav-link" href="#contacts">Contact-Us</a>
@@ -57,8 +58,10 @@
         <p id="bookNow">Open for business<br>Give us a call!!!<br>Email or msg anytime!!!</p>
         <div id="review">
             <p id="reviewSectionTitle">Review Us</p>
-            <p id="reviewBody">Review Us At:<br><a class="review_http" target="_blank" href="Https://g.page/r/CVI9I6zDWccKEAI/review">Https://g.page/r/CVI9I6zDWccKEAI/review</a><br><br> Or scan the QR code with your mobile device</p>
-            <img class="QR" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ArtOfLawnCareLLC-GoogleReview.png" alt="QRcode">
+            <p id="reviewBody">Review Us At:<br><a class="review_http" href="Https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank">Https://g.page/r/CVI9I6zDWccKEAI/review</a><br><br> Or scan the QR code with your mobile device</p>
+            <a class="qrBtn" href="Https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank">
+                <img class="QR" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ArtOfLawnCareLLC-GoogleReview.png" alt="QRcode">
+            </a>
         </div>
         <div id="photo-text">Photo Gallery:</div>
         <section class="imgContainer" id="images"> <!--Would like a later rendition of a single photo in front with left/right movement options-->
@@ -138,10 +141,30 @@
             </div>
             <p id="photo-disclaimer">Some images are taken in other states, grass types and definition of cut lines may vary.</p>
         </section>
-        
+        <section id="payments">
+            <p id="paymentHead">Payments</p>
+                <p class="payTextHead">Pay Via Paypal:</p>
+                    <a class="paylink" href="https://www.paypal.com/paypalme/artberger265" target="_blank">
+                        <button class="payBtn">
+                            Take me to <strong>PayPal</strong>
+                        </button>
+                    </a>
+                <p class="payTextHead">Pay Via Yardbook:</p>
+                    <a class="paylink" href="https://www.yardbook.com/244139/pay_now" target="_blank">
+                        <button class="payBtn">
+                            Take me to <strong>Yardbook</strong>
+                        </button>
+                    </a>
+                        <p id="imporMsg"><strong>IMPORTANT:</strong><br>Have your invoice number handy when <br>visiting Yardbook pay link.</p>
+                <p class="payTextHead">Pay Via Zelle QR code:</p>
+                <br>
+                    <a class="qrBtn" href="https://zellepay.com/qr-codes/?data=s/?data=eyJhY3Rpb24iOiJwYXltZW50liwibmFtZSl6IlRlRSBBUlQgT0YgTEFXTiBDQVJFlExMQylsInFyQ29kZU5hbWUiOiJUSEUgQVJUlE9GIExBV04gQ0FSRSBMTEMiLCJ0b2tlbiI6ImFydHl6aWxsYUBnbWFpbC5jb2oifQ==" target="_blank">
+                        <img class="zelleQR" id="zelleQR" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ZelleAolcQR-edit1.jpg" alt="zelleQR">
+                    </a>
+        </section>
     <!-- form for submiting a message to email-TODO:need js for POST action-->
         <section id="form">
-            <div id="ContactUs-FormTitle">Contact Us:</div>
+            <div id="contactUs-FormTitle">Contact Us:</div><br>
             <form id="contact-form" 
             action="process-form" method="POST"
             enctype="multipart/form-data"
