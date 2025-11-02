@@ -224,6 +224,7 @@ a:hover {
   
   border-radius: 40px;
 }
+
 .list-img {
   display: flex;
   width: 400px;
@@ -231,7 +232,6 @@ a:hover {
   height: 400px;
   max-height:100%;
   overflow: hidden;
-  
 }
 
 .arrow {
@@ -255,6 +255,28 @@ a:hover {
   font-size: 50px;
 }
 
+.imgBtn {
+  color:black;
+  margin:0;
+  padding:0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+}
+
+.imgBtn:focus {
+  outline: none;
+}
+/*
+.imgBtn {
+  border: 2px solid red;
+}
+.imgBtn img {
+  border: 2px solid green;
+}
+*/
 .list-img:hover{
   transform: scale(1.25);
 }
