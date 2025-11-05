@@ -285,9 +285,12 @@ a:hover {
   transform: scale(2);
 }
 
-#photo-disclaimer {
-  font-size:10px;
-  padding-top: 50px;
+a {
+  color:#00FFBB;
+}
+
+a:visited {
+  color: 	#00BFFF;
 }
 
 .payTextHead {
