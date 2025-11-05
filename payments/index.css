@@ -1,4 +1,68 @@
 body {
-    color:black;
-    font: #00FF00;
+    background-color: #000000;
+    color: #00FF00;
+    border: 1px solid rgb(0, 240, 0);
+    text-align: center;
+    text-shadow: 2px 2px 5px #ffffff;
+}
+
+@keyframes colorChange {
+  0% { color: #FF0000; }
+  25% { color: #00FF00; }
+  50% { color: #FF0000; }
+  75% { color: #00FF00; }
+  100% { color: #FF0000; }
+}
+
+#paymentHead{
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.payTextHead {
+  font-size: 30px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.payBtn {
+  font-size: 15px;
+  color:#000000;
+  border-color:#00FF00;
+  background-color: #91ffa7;
+  border-radius: 30px;
+  height: 40px;
+  width: 180px;
+}
+
+.payBtn:hover, #submitButton:hover {
+  background-color:white;
+}
+
+.zelleQR {
+  width: 150px;
+  height: 150px;
+}
+
+#imporMsg {
+  font-size:25px;
+  font-weight: bold;
+  animation: colorChange 3s infinite;
+}
+
+.zelleQR:hover, .QR:hover {
+  border: 2px solid #00FF00
+}
+
+#paymentQs {
+    font-size:20;
+    padding: 55px;
+}
+
+.tele, .email{
+    color: #00FF00;
+}
+
+.tele:hover, .email:hover {
+    color:white;
 }
