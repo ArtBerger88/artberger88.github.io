@@ -6,12 +6,25 @@ body {
     text-shadow: 2px 2px 5px #ffffff;
   }
 
+#title {
+  font-size: 50px;
+  text-decoration: underline;
+}
 
 .imgContainer {
   background-color: #000000;
   display: block;
   padding: 20px;
   padding-top:50px;
+}
+
+.projectImgTitle {
+  font-size: 30px;
+}
+
+#beforeNAfter {
+  font-size: 40px;
+  text-decoration: underline;
 }
 
 .fadeImgContainer {
@@ -21,7 +34,6 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
-
 
 .fadeImg, .fadeImg2, .zoom {
   width: 200px;
@@ -42,7 +54,6 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-600%);
-  
 }
 
 .fadeImg:hover, .fadeImg2:hover, .zoom:hover{
@@ -54,7 +65,7 @@ body {
   padding-top: 50px;
 }
 
-footer {
-    color: white;
+footer{
+    color: #00FF00;
     font-size: 15px;
 }
