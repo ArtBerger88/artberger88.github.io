@@ -43,6 +43,10 @@ const game = {
     options: ["PATH", "BEACH"],
     next: { path: "win", beach: "beachLoss" }
   },
+  win: {
+    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    options: []
+  },
   beachLoss: {
     text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
     options: []
@@ -80,6 +84,14 @@ const game = {
     text: "You reach a beach. Follow the PATH or BEACH?",
     options: ["PATH", "BEACH"],
     next: { path: "win", beach: "beachLoss" }
+  },
+  win: {
+    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    options: []
+  },
+  beachLoss: {
+    text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
+    options: []
   },
 
   // STRAIGHT branch
@@ -141,6 +153,14 @@ const game = {
     text: "You see a path. Go NOW or LATER?",
     options: ["NOW", "LATER"],
     next: { now: "win", later: "win" }
+  },
+  now: {
+    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    options: []
+  },
+  later: {
+    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    options: []
   },
 
   // BACK branch
@@ -205,6 +225,10 @@ const game = {
   },
   saltyLoss: {
     text: "You never reach the treasure!!!! YOU LOSE",
+    options: []
+  },
+  win: {
+    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
     options: []
   },
 
@@ -283,11 +307,11 @@ const game = {
     options: []
   },
   yodaMasterWin: {
-    text: "You study under Yoda for years and become a Jedi Master!!!! YOU WIN",
+    text: 'You have found GrandMaster Yoda. You hear....\n "Patience you covet, Found me you have, in order congragulations is!!!!"\n You study under the great Grandmaster Yoda for years and become a far greater jedi than I could ever be.\n He grants you the Rank of MASTER!!!!\n YOU WIN',
     options: []
   },
   smackChoice: {
-    text: "You smack the lock. You hear a whack and it opens. Go THRU or WAIT?",
+    text: "You smack, hear a whack and it opens. Go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "leiaWin",
