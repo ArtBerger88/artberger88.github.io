@@ -1,3 +1,59 @@
-body {
-    background-color: yellow;
+#title {
+    font-size: 45px;
+    padding-bottom: 15px;
+    color: Orange;
+    text-align:center;
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 2em; 
+    background: #111; 
+    color: #eee;
+    height: 100%;
+    margin: 0;
+    text-align:center;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2em;
+}
+
+#question {
+    font-size: 25px;
+    color:darkorange;
+}
+
+button { 
+    margin: 0.5em; 
+    padding: 0.5em 1em; 
+    font-size: 1em; 
+    background: #444; 
+    color: orange; 
+    border: none; 
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    
+button:hover { 
+    background: #666;
+    color: white; 
+}
+    
+pre { 
+    white-space: pre-wrap; 
+}
+
+footer {
+    color:orange;
+    text-align: center;
+    padding: 1em;
 }
