@@ -15,7 +15,8 @@ const game = {
       left: "leftThicket",
       right: "rightSplit",
       straight: "cottage",
-      back: "backReturn"
+      back: "backReturn",
+      secret: "secretHatch"
     }
   },
 
@@ -368,10 +369,35 @@ function addResetButton() {
   buttonsEl.appendChild(resetBtn);
 }
 
-document.addEventListener("keydown", (e) => {
-  if (e.shiftKey && e.key.toLowerCase() === "s") {
-    render("secretHatch");
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const secretZone = document.getElementById("secret-zone");
+  let pressTimer;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.shiftKey && e.key.toLowerCase() === "s") {
+      render("secretHatch");
+    }
+  });
+
+  secretZone.addEventListener("click", () => {
+  console.log("Secret branch triggered via click!");
+  render("secretHatch");
+});
+
+  /*secretZone.addEventListener("touchstart", () => {
+    pressTimer = setTimeout(() => {
+      console.log("Secret branch triggered via long press!");
+      if (game && game.secretHatch && typeof game.secretHatch.start === "function") {
+        render("secretHatch");
+      } else {
+        console.warn("Secret hatch not available or misconfigured.");
+      }
+    }, 1500);
+  });
+
+  secretZone.addEventListener("touchend", () => {
+    clearTimeout(pressTimer);
+  });*/
 });
 
 render(currentState);
