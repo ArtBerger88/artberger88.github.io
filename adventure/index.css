@@ -21,15 +21,24 @@ body {
   min-height: 100vh;
 }
 
+#title-container {
+  position: relative;
+  display: inline-block;
+}
+
+#hatch-anchor {
+  position: relative;
+  display: inline-block;
+}
+
 #secret-zone {
   position: absolute;
-  top: 79px;
-  right: 80px;      
-  width: 50px;
-  height: 50px;
-  opacity: 0;
+  top: -10px;
+  left: -12px;
+  width: 2px;
+  height: 2px;
+  opacity:0;
   z-index: 9999;
-  
 }
 
 main {

@@ -28,7 +28,9 @@ const game = {
   },
   mosquitoLoss: {
     text: "You got stuck in the thicket and eaten by mosquitoes!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "mosquitoLoss"
   },
   leftBeach: {
     text: "You come to a sandy beach. WALK the beach or SWIM the waters?",
@@ -37,7 +39,9 @@ const game = {
   },
   swimLoss: {
     text: "You attempted to brave the waters, to no avail!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "swimLoss"
   },
   leftPathChoice: {
     text: "You walked for a while until you see a path. Do you walk the PATH or follow the BEACH?",
@@ -50,7 +54,9 @@ const game = {
   },
   beachLoss: {
     text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "beachLoss"
   },
 
   // RIGHT branch
@@ -61,7 +67,9 @@ const game = {
   },
   snakeLoss: {
     text: "You continue right yet again, only to be wrong, a GIANT snake eats you!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "snakeLoss"
   },
   rightSound: {
     text: "You continue until you hear a sound, do you investigate YES or NO",
@@ -70,7 +78,9 @@ const game = {
   },
   dragonLoss: {
     text: "You investigate, heading around the corner and see a DRAGON sitting upon a pile of gold,\n he turns you to ash!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "dragonLoss"
   },
   clearingChoice: {
     text: "You ignore the sound and keep going, you see a clearing, head TOWARDS or AWAY from the clearing??",
@@ -79,7 +89,9 @@ const game = {
   },
   forestLoss: {
     text: "You head away for the clearing, the forest darkens and you lose your way!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "forestLoss"
   },
   beachChoice: {
     text: "You head thru the clearing and onto a beach, you see a path, follow the PATH or BEACH?",
@@ -92,7 +104,9 @@ const game = {
   },
   beachLoss: {
     text: "You continue down the beach for days until you turn into SANDMAN!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "beachLoss"
   },
 
   // STRAIGHT branch
@@ -103,7 +117,9 @@ const game = {
   },
   dazedLoss: {
     text: "You continue walking for days and daze only to become dazed!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "dazedLoss"
   },
   cottageStay: {
     text: "You enter the cottage, it appears to have been abandoned for quite some time.\n You scavenge food and water, do you spend the night, STAY or GO??",
@@ -112,7 +128,9 @@ const game = {
   },
   bearLoss: {
     text: "You fall asleep with a full belly next to a warm fire.\n A bear smells your good fortune, ravenges the cottage and tears you to shreds!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "bearLoss"
   },
   trailChoice: {
     text: "You ate some rations and head back out. Theres the obvious ROAD,\n You also see a trail behind the cottage, ROAD or TRAIL? ?",
@@ -120,7 +138,7 @@ const game = {
     next: { road: "drifterEnd", trail: "hillChoice" }
   },
   drifterEnd: {
-    text: "The route was rough and hard to traverse, you run into a blockade of cars, forcing you to stop for the night.\n You eat sleep and tell spooky stories to yourself over your makeshift campfire.\n Becoming quite attached to yourself You dont lose but you also dont win,\n you live your life as a nomad and wandering drifter meandering from village to in search of an exact clone of yourself to keep you company for the rest of your drifting days.",
+    text: "The route was rough and hard to traverse, you run into a blockade of cars, forcing you to stop for the night.\n You eat sleep and tell spooky stories to yourself over your makeshift campfire.\n Becoming quite attached to yourself You dont lose but you also dont win,\n you live your life as a nomad and wandering drifter meandering from village to town in search of an exact clone of yourself to keep you company for the rest of your drifting days.",
     options: []
   },
   hillChoice: {
@@ -130,7 +148,9 @@ const game = {
   },
   ankleLoss: {
     text: "You climb the hill that seems like a mountain, immensely tired now you fall climbing down the hill breaking your ankle!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "ankleLoss"
   },
   riverChoice: {
     text: "You go around the hill safely coming a to river, do you CROSS or FOLLOW the river?",
@@ -139,7 +159,9 @@ const game = {
   },
   currentLoss: {
     text: "You attempt to cross the river but are swept away by current!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "currentLoss"
   },
   riverBeach: {
     text: "You follow the river it leads to a beach, do you SWIM or WALK the beach?",
@@ -148,7 +170,9 @@ const game = {
   },
   sharkLoss: {
     text: "You swim and swim, until a shark eats you!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "sharkLoss"
   },
   pathTiming: {
     text: "You walk the beach until you see a path, go down the path NOW or LATER?",
@@ -172,7 +196,9 @@ const game = {
   },
   loopyLoss: {
     text: "You go back again, your stuck in a loop, not a real loop, just a loopy loop!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "loopyLoss"
   },
   backSplit: {
     text: "You stopped going back just as you began to not recognize the reverse route you took,\n theres a road that looks promicing do you go LEFT or RIGHT?",
@@ -181,7 +207,9 @@ const game = {
   },
   kirbyLoss: {
     text: "You go left you come to a downed tree blocking your route, you try moving the tree, to no avail.\n All your energy is spent you sit down for a little bit, Kirby comes around the corner and sucks you up!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "kirbyLoss"
   },
   streamChoice: {
     text: "You go down the right way you feel quite confident this will lead to somewhere promicing, a land of riches perhaps.\n Halfway thru your daydream you come to a stream do you SWIM or FOLLOW the stream?",
@@ -190,7 +218,9 @@ const game = {
   },
   piranhaLoss: {
     text: "You go for a dip enjoying the perfect water temp until you get eaten by piranhas!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "piranhaLoss"
   },
   streamFollow: {
     text: "You follow the stream, it has to lead somewhere but theres nothing in sight so far.\n Do you STRAY away or FOLLOW the stream?",
@@ -199,7 +229,9 @@ const game = {
   },
   cowLoss: {
     text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches,\n YOU FIND COWS!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "cowLoss"
   },
   campChoice: {
     text: "You continue to follow the stream for a day, stopping only to catch a fish do you stop to make CAMP or NOT?",
@@ -208,7 +240,9 @@ const game = {
   },
   wolfLoss: {
     text: "You decide to continue without making camp, you are mighty hungry by the time night falls, and so are the wolves that just picked up your scent.\n Its not long before you are swarmed by a PACK of wolves!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "wolfLoss"
   },
   morningChoice: {
     text: "You made camp setting up a makeshift shack out of sticks and tree limbs also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enjoying the beutiful clear night.\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day. You pack up camp do you FOLLOW the stream or NOT?",
@@ -217,7 +251,9 @@ const game = {
   },
   bullLoss: {
     text: "You do not continue to follow the stream instead walking in a diffent direction.\n This leads to a herd of bulls, you are wearing red so all the bulls charge at you!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "bullLoss"
   },
   finalBeach: {
     text: "Knowing this will lead the right way you follow the stream, after walking for miles you finally see a BEACH and PATH.\n Which way will you go?",
@@ -226,7 +262,9 @@ const game = {
   },
   saltyLoss: {
     text: "You walk the beach and enjoy the sand going swimming at one point, tasting the water,\n knowing that you would be as salty as the ocean when you never reach the path to treasure!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "saltyLoss"
   },
   win: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
@@ -258,7 +296,9 @@ const game = {
   },
   waitLoss: {
     text: "You wait and go nowhere, it seems you are still where you started!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "waitLoss"
   },
   rockChoice: {
     text: "You pick up the rock, finding no key under it. You can either put the rock DOWN or SMASH the lock?",
@@ -293,7 +333,9 @@ const game = {
   },
   armLoss: {
     text: "You spot a hole in the wall, thinking it could be something useful you reach in.\n To no surprise you lose your arm and the game to the secret and arm eating monster!!!! YOU LOSE",
-    options: []
+    options: [],
+    isLoss: true,
+    lossType: "armLoss"
   },
   pryLoop: {
     text: "You PRY and PRY. oh how you PRY.",
@@ -344,6 +386,15 @@ let currentState = "start";
 function render(stateKey) {
   const state = game[stateKey];
   currentState = stateKey;
+
+  buttonsEl.innerHTML = "";
+
+  if (state.isLoss === true) {
+    handleLoss(stateKey);  
+    addResetButton();
+    return;
+  }
+
   questionEl.textContent = state.text;
   buttonsEl.innerHTML = "";
 
@@ -362,10 +413,50 @@ function render(stateKey) {
   }
 }
 
+function handleLoss(stateKey) {
+  const state = game[stateKey];
+
+  questionEl.textContent = state.text;
+
+  const imageContainer = document.getElementById("game-image");
+  imageContainer.innerHTML = `
+    <img src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Bones.gif" 
+         alt="Bones" class="game-image">
+  `;
+
+  setTimeout(() => {
+    const audio = document.getElementById("game-audio");
+    audio.src = "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/death.mp3";
+    audio.play();
+  },1000); 
+
+  if (stateKey === "mosquitoLoss") {
+    const mosquitoAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3");
+    mosquitoAudio.play();
+    setTimeout(() => {
+  mosquitoAudio.pause();
+  mosquitoAudio.currentTime = 0; 
+}, 2000);
+  }
+  //console.log("Loss triggered:", stateKey);
+}
+
 function addResetButton() {
   const resetBtn = document.createElement("button");
   resetBtn.textContent = "RESET";
-  resetBtn.onclick = () => render("start");
+  resetBtn.onclick = () => {
+    
+    const imageContainer = document.getElementById("game-image");
+    imageContainer.innerHTML = "";
+
+    const audio = document.getElementById("game-audio");
+    audio.pause();
+    audio.currentTime = 0;
+    
+    buttonsEl.innerHTML = "";
+
+    render("start");
+  };
   buttonsEl.appendChild(resetBtn);
 }
 
@@ -388,7 +479,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-  /*Timeout for secret hatch
+/*
+//Mosquito Sound function-
+
+function mosquitoSound() {
+  document.getElementById("question").textContent =
+    "You got stuck in the thicket and eaten by mosquitoes!!!! YOU LOSE";
+  // Play mosquito sound
+  const audio = document.getElementById("game-audio");
+  audio.src = "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3";
+  audio.play();
+  
+}
+
+//Timeout for secret hatch-
+
   secretZone.addEventListener("touchstart", () => {
     pressTimer = setTimeout(() => {
       console.log("Secret branch triggered via long press!");
