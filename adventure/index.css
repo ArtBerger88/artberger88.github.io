@@ -43,7 +43,9 @@ main {
 }
 
 button { 
-    margin: 0.5em; 
+    margin: 0.5em;
+    margin-top: 70px;
+    margin-right: 30px;
     padding: 0.5em 1em; 
     font-size: 1em; 
     background: #444; 
