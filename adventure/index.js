@@ -1,6 +1,6 @@
 const game = {
   start: {
-    text: "Hello Adventurer!\nWelcome to 'The Lone Road'\nGOOD LUCK\n\nAre you ready, YES or NO?",
+    text: "Hello Adventurer!\nWelcome to 'The Lone Road'\n\nGOOD LUCK out there!!!\n\nAre you ready, YES or NO?",
     options: ["YES", "NO"],
     next: { yes: "split", no: "notReady" }
   },
@@ -9,7 +9,7 @@ const game = {
     options: []
   },
   split: {
-    text: "You are walking down a road and come to a 4 way split. Do you go STRAIGHT, LEFT, RIGHT or BACK?",
+    text: "Can you find the PATH? You are walking down a road and come to a 4 way split.\n Do you go STRAIGHT, LEFT, RIGHT or BACK?",
     options: ["STRAIGHT", "LEFT", "RIGHT", "BACK"],
     next: {
       left: "leftThicket",
@@ -59,29 +59,29 @@ const game = {
     next: { right: "snakeLoss", left: "rightSound" }
   },
   snakeLoss: {
-    text: "A GIANT snake eats you!!!! YOU LOSE",
+    text: "You continue right yet again, only to be wrong, a GIANT snake eats you!!!! YOU LOSE",
     options: []
   },
   rightSound: {
-    text: "You hear a sound. Investigate YES or NO?",
+    text: "You continue until you hear a sound, do you investigate YES or NO",
     options: ["YES", "NO"],
     next: { yes: "dragonLoss", no: "clearingChoice" }
   },
   dragonLoss: {
-    text: "You see a DRAGON sitting on gold. He turns you to ash!!!! YOU LOSE",
+    text: "You investigate, heading around the corner and see a DRAGON sitting upon a pile of gold,\n he turns you to ash!!!! YOU LOSE",
     options: []
   },
   clearingChoice: {
-    text: "You see a clearing. Head TOWARDS or AWAY?",
+    text: "You ignore the sound and keep going, you see a clearing, head TOWARDS or AWAY from the clearing??",
     options: ["TOWARDS", "AWAY"],
     next: { away: "forestLoss", towards: "beachChoice" }
   },
   forestLoss: {
-    text: "The forest darkens and you lose your way!!!! YOU LOSE",
+    text: "You head away for the clearing, the forest darkens and you lose your way!!!! YOU LOSE",
     options: []
   },
   beachChoice: {
-    text: "You reach a beach. Follow the PATH or BEACH?",
+    text: "You head thru the clearing and onto a beach, you see a path, follow the PATH or BEACH?",
     options: ["PATH", "BEACH"],
     next: { path: "win", beach: "beachLoss" }
   },
@@ -90,67 +90,67 @@ const game = {
     options: []
   },
   beachLoss: {
-    text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
+    text: "You continue down the beach for days until you turn into SANDMAN!!!! YOU LOSE",
     options: []
   },
 
   // STRAIGHT branch
   cottage: {
-    text: "You arrive at a cottage. Go in YES or NO?",
+    text: "The road seems to go on forever. Eventually you arrive at a cottage, do you go in YES or NO?",
     options: ["YES", "NO"],
     next: { yes: "cottageStay", no: "dazedLoss" }
   },
   dazedLoss: {
-    text: "You walk for days and become dazed!!!! YOU LOSE",
+    text: "You continue walking for days and daze only to become dazed!!!! YOU LOSE",
     options: []
   },
   cottageStay: {
-    text: "Scavenge food and water. STAY or GO?",
+    text: "You enter the cottage, it appears to have been abandoned for quite some time.\n You scavenge food and water, do you spend the night, STAY or GO??",
     options: ["STAY", "GO"],
     next: { stay: "bearLoss", go: "trailChoice" }
   },
   bearLoss: {
-    text: "A bear ravages the cottage and tears you to shreds!!!! YOU LOSE",
+    text: "You fall asleep with a full belly next to a warm fire.\n A bear smells your good fortune, ravenges the cottage and tears you to shreds!!!! YOU LOSE",
     options: []
   },
   trailChoice: {
-    text: "You see a trail behind the cottage. ROAD or TRAIL?",
+    text: "You ate some rations and head back out. Theres the obvious ROAD,\n You also see a trail behind the cottage, ROAD or TRAIL? ?",
     options: ["ROAD", "TRAIL"],
     next: { road: "drifterEnd", trail: "hillChoice" }
   },
   drifterEnd: {
-    text: "You become a wandering drifter. You don't lose, but you don't win either.",
+    text: "The route was rough and hard to traverse, you run into a blockade of cars, forcing you to stop for the night.\n You eat sleep and tell spooky stories to yourself over your makeshift campfire.\n Becoming quite attached to yourself You dont lose but you also dont win,\n you live your life as a nomad and wandering drifter meandering from village to in search of an exact clone of yourself to keep you company for the rest of your drifting days.",
     options: []
   },
   hillChoice: {
-    text: "You arrive at a hill. Go AROUND or CLIMB?",
+    text: "The route was rough and hard to traverse it took longer than expected.\n You arrive at a hill, do you go AROUND or CLIMB the hill?",
     options: ["AROUND", "CLIMB"],
     next: { climb: "ankleLoss", around: "riverChoice" }
   },
   ankleLoss: {
-    text: "You fall and break your ankle!!!! YOU LOSE",
+    text: "You climb the hill that seems like a mountain, immensely tired now you fall climbing down the hill breaking your ankle!!!! YOU LOSE",
     options: []
   },
   riverChoice: {
-    text: "You reach a river. CROSS or FOLLOW?",
+    text: "You go around the hill safely coming a to river, do you CROSS or FOLLOW the river?",
     options: ["CROSS", "FOLLOW"],
     next: { cross: "currentLoss", follow: "riverBeach" }
   },
   currentLoss: {
-    text: "Swept away by the current!!!! YOU LOSE",
+    text: "You attempt to cross the river but are swept away by current!!!! YOU LOSE",
     options: []
   },
   riverBeach: {
-    text: "You reach a beach. SWIM or WALK?",
+    text: "You follow the river it leads to a beach, do you SWIM or WALK the beach?",
     options: ["SWIM", "WALK"],
     next: { swim: "sharkLoss", walk: "pathTiming" }
   },
   sharkLoss: {
-    text: "A shark eats you!!!! YOU LOSE",
+    text: "You swim and swim, until a shark eats you!!!! YOU LOSE",
     options: []
   },
   pathTiming: {
-    text: "You see a path. Go NOW or LATER?",
+    text: "You walk the beach until you see a path, go down the path NOW or LATER?",
     options: ["NOW", "LATER"],
     next: { now: "win", later: "win" }
   },
@@ -170,61 +170,61 @@ const game = {
     next: { back: "loopyLoss", no: "backSplit" }
   },
   loopyLoss: {
-    text: "You're stuck in a loopy loop!!!! YOU LOSE",
+    text: "You go back again, your stuck in a loop, not a real loop, just a loopy loop!!!! YOU LOSE",
     options: []
   },
   backSplit: {
-    text: "You see a promising road. Go LEFT or RIGHT?",
+    text: "You stopped going back just as you began to not recognize the reverse route you took,\n theres a road that looks promicing do you go LEFT or RIGHT?",
     options: ["LEFT", "RIGHT"],
     next: { left: "kirbyLoss", right: "streamChoice" }
   },
   kirbyLoss: {
-    text: "Kirby sucks you up!!!! YOU LOSE",
+    text: "You go left you come to a downed tree blocking your route, you try moving the tree, to no avail.\n All your energy is spent you sit down for a little bit, Kirby comes around the corner and sucks you up!!!! YOU LOSE",
     options: []
   },
   streamChoice: {
-    text: "You come to a stream. SWIM or FOLLOW?",
+    text: "You go down the right way you feel quite confident this will lead to somewhere promicing, a land of riches perhaps.\n Halfway thru your daydream you come to a stream do you SWIM or FOLLOW the stream?",
     options: ["SWIM", "FOLLOW"],
     next: { swim: "piranhaLoss", follow: "streamFollow" }
   },
   piranhaLoss: {
-    text: "Eaten by piranhas!!!! YOU LOSE",
+    text: "You go for a dip enjoying the perfect water temp until you get eaten by piranhas!!!! YOU LOSE",
     options: []
   },
   streamFollow: {
-    text: "STRAY away or FOLLOW the stream?",
+    text: "You follow the stream, it has to lead somewhere but theres nothing in sight so far.\n Do you STRAY away or FOLLOW the stream?",
     options: ["STRAY", "FOLLOW"],
     next: { stray: "cowLoss", follow: "campChoice" }
   },
   cowLoss: {
-    text: "You find cows, not riches!!!! YOU LOSE",
+    text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches,\n YOU FIND COWS!!!! YOU LOSE",
     options: []
   },
   campChoice: {
-    text: "Make CAMP or NOT?",
+    text: "You continue to follow the stream for a day, stopping only to catch a fish do you stop to make CAMP or NOT?",
     options: ["CAMP", "NOT"],
     next: { not: "wolfLoss", camp: "morningChoice" }
   },
   wolfLoss: {
-    text: "Wolves swarm you!!!! YOU LOSE",
+    text: "You decide to continue without making camp, you are mighty hungry by the time night falls, and so are the wolves that just picked up your scent.\n Its not long before you are swarmed by a PACK of wolves!!!! YOU LOSE",
     options: []
   },
   morningChoice: {
-    text: "FOLLOW the stream or NOT?",
+    text: "You made camp setting up a makeshift shack out of sticks and tree limbs also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enoying the beutiful clear night.\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day. You pack up camp do you FOLLOW the stream or NOT?",
     options: ["FOLLOW", "NOT"],
     next: { not: "bullLoss", follow: "finalBeach" }
   },
   bullLoss: {
-    text: "Charged by bulls!!!! YOU LOSE",
+    text: "You do not continue to follow the stream instead walking in a diffent direction.\n This leads to a herd of bulls, you are wearing red so all the bulls charge at you!!!! YOU LOSE",
     options: []
   },
   finalBeach: {
-    text: "You see a BEACH and a PATH. Which way?",
+    text: "Knowing this will lead the right way you follow the stream, after walking for miles you finally see a BEACH and PATH.\n Which way will you go?",
     options: ["BEACH", "PATH"],
     next: { beach: "saltyLoss", path: "win" }
   },
   saltyLoss: {
-    text: "You never reach the treasure!!!! YOU LOSE",
+    text: "You walk the beach and enjoy the sand going swimming at one point, tasting the water,\n knowing that you would be as salty as the ocean when you never reach the path to treasure!!!! YOU LOSE",
     options: []
   },
   win: {
@@ -234,17 +234,17 @@ const game = {
 
   // SECRET branch
   secretHatch: {
-    text: "You found a secret hatch. LOOK, PRY, or SMACK the lock?",
+    text: "You found a secret hatch that is sealed.\n You can LOOK around, PRY, or SMACK the lock?",
     options: ["LOOK", "PRY", "SMACK"],
     next: { look: "lookAround", pry: "pryLoop", smack: "smackChoice" }
   },
   lookAround: {
-    text: "You see a MAT, a ROCK, and a HOLE.",
+    text: "You look around, there is a MAT a ROCK, and a HOLE in the wall.",
     options: ["MAT", "ROCK", "HOLE"],
     next: { mat: "matChoice", rock: "rockChoice", hole: "armLoss" }
   },
     matChoice: {
-    text: "You look under the mat and find a key that unlocks the hatch. Do you go THRU or WAIT?",
+    text: "You look under the mat on the floor, spotting a key that unlocks the lock, do you go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "jawasWin",
@@ -252,7 +252,7 @@ const game = {
     }
   },
   jawasWin: {
-    text: "You go thru the secret hatch finding jawas that trade you a few good droids for the right amount of credits!!!! YOU WIN",
+    text: "You go thru the secret hatch finding jawas that trade you a few good droids for the right amount of credits!!!!YOU WIN but so do the jawas",
     options: []
   },
   waitLoss: {
@@ -260,7 +260,7 @@ const game = {
     options: []
   },
   rockChoice: {
-    text: "You pick up the rock, finding no key under it. Put the rock DOWN or SMASH the lock?",
+    text: "You pick up the rock, finding no key under it. You can either put the rock DOWN or SMASH the lock?",
     options: ["DOWN", "SMASH"],
     next: {
       down: "hopeChoice",
@@ -268,18 +268,18 @@ const game = {
     }
   },
   hopeChoice: {
-    text: "You put the rock down. Obi Wan is not here. There is no HOPE. Type HOPE to use the force.",
+    text: "You put the rock down also letting yourself down. Obi Wan is not here there is no HOPE!!!! You Lose.",
     options: ["HOPE"],
     next: {
       hope: "forceWin"
     }
   },
   forceWin: {
-    text: "OBI WAN was with us. You use the force and I am compelled to give you all the riches in this game!!!! YOU WIN",
+    text: "OBI WAN was with us, he is always with us, you use the force and i am compelled to give you all the riches in this game!!!! YOU WIN",
     options: []
   },
   smashHatch: {
-    text: "You smash the lock with flawless technique. The hatch flings open. Do you go THRU or WAIT?",
+    text: "You decide the only thing left to do is smash the lock. With a great hurl and flawless technique the rock smashes the lock breaking the mechanism and crumbiling the rock also, the hatch flings open. Do you go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "lukeWin",
@@ -291,11 +291,18 @@ const game = {
     options: []
   },
   armLoss: {
-    text: "You reach into the hole and lose your arm to the secret monster!!!! YOU LOSE",
+    text: "You spot a hole in the wall, thinking it could be something useful you reach in.\n To no surprise you lose your arm and the game to the secret and arm eating monster!!!! YOU LOSE",
     options: []
   },
   pryLoop: {
-    text: "You PRY and PRY. It budges. With intuition you PRY again and the hatch opens. Go THRU or WAIT?",
+    text: "You PRY and PRY. oh how you PRY.",
+    options: ["PRY"],
+    next: {
+      pry: "pryLoop2"
+    }
+  },
+  pryLoop2: {
+    text: "You PRY.... more?\n It budges. With a little intuition on your side you PRY again and the hatch opens. Go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "yodaWin",
@@ -303,7 +310,7 @@ const game = {
     }
   },
   yodaWin: {
-    text: "You have found GrandMaster Yoda!!!! Found me you have, in order, congragulations is!!!! YOU WIN",
+    text: 'You have found GrandMaster Yoda!!!! "Found me you have, in order, congragulations is!!!!" YOU WIN',
     options: []
   },
   yodaMasterWin: {
@@ -319,7 +326,7 @@ const game = {
     }
   },
   leiaWin: {
-    text: "You go thru the secret hatch finding Princess Leia in the Jabba slave outfit!!!! YOU WIN",
+    text: "You go thru the secret hatch finding Princess Leia in the Jabba slave outfit!!!! YOU WIN AT LIFE",
     options: []
   },
   invalid: {
