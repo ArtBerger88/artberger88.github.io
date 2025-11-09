@@ -371,6 +371,7 @@ function addResetButton() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const secretZone = document.getElementById("secret-zone");
+  const hatchAudio = document.getElementById('hatchAudio');
   let pressTimer;
 
   document.addEventListener("keydown", (e) => {
@@ -381,10 +382,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   secretZone.addEventListener("click", () => {
   console.log("Secret branch triggered via click!");
+  hatchAudio.currentTime = 0;
+  hatchAudio.play();
   render("secretHatch");
 });
 
-  /*secretZone.addEventListener("touchstart", () => {
+
+  /*Timeout for secret hatch
+  secretZone.addEventListener("touchstart", () => {
     pressTimer = setTimeout(() => {
       console.log("Secret branch triggered via long press!");
       if (game && game.secretHatch && typeof game.secretHatch.start === "function") {
