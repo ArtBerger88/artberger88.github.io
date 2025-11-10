@@ -53,8 +53,8 @@ const game = {
   win: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
     options: [],
-    isLoss: false,
-    winType: "treasure"
+    isAudio: true,
+    audioType: "treasure"
   },
   beachLoss: {
     text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
@@ -86,7 +86,9 @@ const game = {
     text: "You investigate, heading around the corner and see a DRAGON sitting upon a pile of gold,\n he turns you to ash!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "dragonLoss"
+    lossType: "dragonLoss",
+    isaudio: true,
+    audioType: "dragFire"
   },
   clearingChoice: {
     text: "You ignore the sound and keep going, you see a clearing, head TOWARDS or AWAY from the clearing??",
@@ -106,7 +108,9 @@ const game = {
   },
   win: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
-    options: []
+    options: [],
+    isaudio: true,
+    audioType: "treasure"
   },
   beachLoss: {
     text: "You continue down the beach for days until you turn into SANDMAN!!!! YOU LOSE",
@@ -136,7 +140,9 @@ const game = {
     text: "You fall asleep with a full belly next to a warm fire.\n A bear smells your good fortune, ravenges the cottage and tears you to shreds!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "bearLoss"
+    lossType: "bearLoss",
+    isaudio: true,
+    audioType: "bear"
   },
   trailChoice: {
     text: "You ate some rations and head back out. Theres the obvious ROAD,\n You also see a trail behind the cottage, ROAD or TRAIL? ?",
@@ -189,11 +195,15 @@ const game = {
   },
   now: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "treasure"
   },
   later: {
-    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
-    options: []
+    text: "You pateince is rewarding, The path leads you to Treasures beyond anything you could fathom, what a wild adventure!!!! YOU WIN",
+    options: [],
+    isAudio: true,
+    audioType: "treasure2"
   },
 
   // BACK branch
@@ -217,7 +227,9 @@ const game = {
     text: "You go left you come to a downed tree blocking your route, you try moving the tree, to no avail.\n All your energy is spent you sit down for a little bit, Kirby comes around the corner and sucks you up!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "kirbyLoss"
+    lossType: "kirbyLoss",
+    isAudio: true,
+    audioType: "kirby"
   },
   streamChoice: {
     text: "You go down the right way you feel quite confident this will lead to somewhere promicing, a land of riches perhaps.\n Halfway thru your daydream you come to a stream do you SWIM or FOLLOW the stream?",
@@ -239,7 +251,9 @@ const game = {
     text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches,\n YOU FIND COWS!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "cowLoss"
+    lossType: "cowLoss",
+    isAudio: true,
+    audioType: "cow"
   },
   campChoice: {
     text: "You continue to follow the stream for a day, stopping only to catch a fish do you stop to make CAMP or NOT?",
@@ -250,7 +264,9 @@ const game = {
     text: "You decide to continue without making camp, you are mighty hungry by the time night falls, and so are the wolves that just picked up your scent.\n Its not long before you are swarmed by a PACK of wolves!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "wolfLoss"
+    lossType: "wolfLoss",
+    isAudio: true,
+    audioType: "wolf"
   },
   morningChoice: {
     text: "You made camp setting up a makeshift shack out of sticks and tree limbs also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enjoying the beutiful clear night.\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day. You pack up camp do you FOLLOW the stream or NOT?",
@@ -276,7 +292,9 @@ const game = {
   },
   win: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "treasure"
   },
 
   // SECRET branch
@@ -300,7 +318,9 @@ const game = {
   },
   jawasWin: {
     text: "You go thru the secret hatch finding jawas that trade you a few good droids for the right amount of credits!!!!YOU WIN but so do the jawas",
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "jawas"
   },
   waitLoss: {
     text: "You wait and go nowhere, it seems you are still where you started!!!! YOU LOSE",
@@ -325,7 +345,9 @@ const game = {
   },
   forceWin: {
     text: "OBI WAN was with us, he is always with us, you use the force and i am compelled to give you all the riches in this game!!!! YOU WIN",
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "hope"
   },
   smashHatch: {
     text: "You decide the only thing left to do is smash the lock. With a great hurl and flawless technique the rock smashes the lock breaking the mechanism and crumbiling the rock also, the hatch flings open. Do you go THRU or WAIT?",
@@ -337,7 +359,9 @@ const game = {
   },
   lukeWin: {
     text: "You go thru the secret hatch finding Luke Skywalker!!!! YOU WIN",
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "luke"
   },
   armLoss: {
     text: "You spot a hole in the wall, thinking it could be something useful you reach in.\n To no surprise you lose your arm and the game to the secret and arm eating monster!!!! YOU LOSE",
@@ -362,11 +386,15 @@ const game = {
   },
   yodaWin: {
     text: 'You have found GrandMaster Yoda!!!! "Found me you have, in order, congragulations is!!!!" YOU WIN',
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "yoda"
   },
   yodaMasterWin: {
     text: 'You have found GrandMaster Yoda. You hear....\n "Patience you covet, Found me you have, in order congragulations is!!!!"\n You study under the great Grandmaster Yoda for years and become a far greater jedi than I could ever be.\n He grants you the Rank of MASTER!!!!\n YOU WIN',
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "grandYoda"
   },
   smackChoice: {
     text: "You smack, hear a whack and it opens. Go THRU or WAIT?",
@@ -378,7 +406,9 @@ const game = {
   },
   leiaWin: {
     text: "You go thru the secret hatch finding Princess Leia in the Jabba slave outfit!!!! YOU WIN AT LIFE",
-    options: []
+    options: [],
+    isAudio: true,
+    audioType: "leia"
   },
   invalid: {
   text: "That answer is not correct.",
@@ -390,9 +420,31 @@ const game = {
 const questionEl = document.getElementById("question");
 const buttonsEl = document.getElementById("buttons");
 const audioMap = {
-  mosquito: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3",
   ankle: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ankleBreak-audio.mp3",
+  bear: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/bear-audio.mp3",
+  bite: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cartoonBite-audio.mp3",
+  cow: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cowMoo-audio.mp3",
+  door: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/door-creaking-audio.mp3",
+  dragFire: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/dragonFire-audio.mp3",
+  dragRoar: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/dragonRoar-audio.mp3",
+  may4th: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/forceBeWithYou-audio.mp3",
+  hope: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/hope-audio.mp3",
+  intro: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/intro-audio.mp3",
+  jawas: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/jawas-audio.mp3",
+  leia: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/leia-audio.mp3",
+  lightsaber: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/lightsaber-audio.mp3",
+  luke: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/lukeSkywalker-audio.mp3",
+  mosquito:"https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3",
+  openDoor: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/openDoor-audio.mp3",
   snake: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/snakeRattle-audio.mp3",
+  grandYoda: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/trainYoda-audio.mp3",
+  treasure: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3",
+  treasure2: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure2-audio.mp3",
+  win: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/win-audio.mp3",
+  win2: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/win2-audio.mp3",
+  kirby: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/windSuction-audio.mp3",
+  wolf: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/wolfHowl-audio.mp3",
+  yoda: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/yoda-audio.mp3",
   // Add more audio types here as needed
 };
 let currentState = "start";
@@ -443,7 +495,7 @@ function playAudio(audioType) {
   setTimeout(() => {
     audio.pause();
     audio.currentTime = 0;
-  }, 3000);
+  }, 5000);
 }
 
 function handleLoss(stateKey) {
