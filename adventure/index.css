@@ -71,7 +71,7 @@ button:hover {
 }
     
 #game-image {
-  align-content: center;
+  justify-content: left;
 }
 
 pre { 

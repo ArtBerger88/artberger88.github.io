@@ -30,7 +30,9 @@ const game = {
     text: "You got stuck in the thicket and eaten by mosquitoes!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "mosquitoLoss"
+    lossType: "mosquitoLoss",
+    isAudio: true,
+    audioType: "mosquito"
   },
   leftBeach: {
     text: "You come to a sandy beach. WALK the beach or SWIM the waters?",
@@ -71,7 +73,9 @@ const game = {
     text: "You continue right yet again, only to be wrong, a GIANT snake eats you!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "snakeLoss"
+    lossType: "snakeLoss",
+    isAudio: true,
+    audioType: "snake"
   },
   rightSound: {
     text: "You continue until you hear a sound, do you investigate YES or NO",
@@ -152,7 +156,9 @@ const game = {
     text: "You climb the hill that seems like a mountain, immensely tired now you fall climbing down the hill breaking your ankle!!!! YOU LOSE",
     options: [],
     isLoss: true,
-    lossType: "ankleLoss"
+    lossType: "ankleLoss",
+    isAudio: true,
+    audioType: "ankle"
   },
   riverChoice: {
     text: "You go around the hill safely coming a to river, do you CROSS or FOLLOW the river?",
@@ -383,32 +389,30 @@ const game = {
 // DOM logic remains unchanged
 const questionEl = document.getElementById("question");
 const buttonsEl = document.getElementById("buttons");
+const audioMap = {
+  mosquito: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3",
+  ankle: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ankleBreak-audio.mp3",
+  snake: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/snakeRattle-audio.mp3",
+  // Add more audio types here as needed
+};
 let currentState = "start";
 
 function render(stateKey) {
-  console.log("render called with:", stateKey);
   const state = game[stateKey];
   currentState = stateKey;
 
   buttonsEl.innerHTML = "";
-  
-  console.log("Checking isLoss:", state.isLoss)
+
 //state not loading for win
-  if (state.isLoss === true) {
+if (state.isAudio && state.audioType) {
+  playAudio(state.audioType);
+}  
+if (state.isLoss === true) {
   handleLoss(stateKey);
   addResetButton();
   return;
 }
-  if (state.winType) {
-  console.log("handleWin triggered with:", stateKey);
-  
-  handleWin(stateKey);
-  addResetButton();
-  return;
-}
 
-
-console.log("State object:", state)
   questionEl.textContent = state.text;
   buttonsEl.innerHTML = "";
 
@@ -427,6 +431,21 @@ console.log("State object:", state)
   }
 }
 
+function playAudio(audioType) {
+  const audioSrc = audioMap[audioType];
+  if (!audioSrc) {
+  return;
+}
+  const audio = new Audio(audioSrc);
+  audio.play()
+  .catch(err => console.error('Audio playback failed:', err));
+ 
+  setTimeout(() => {
+    audio.pause();
+    audio.currentTime = 0;
+  }, 3000);
+}
+
 function handleLoss(stateKey) {
   const state = game[stateKey];
 
@@ -443,71 +462,7 @@ function handleLoss(stateKey) {
     audio.src = "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/death.mp3";
     audio.play();
   },1000); 
-
-  if (stateKey === "mosquitoLoss") {
-    const mosquitoAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3");
-    mosquitoAudio.play();
-    setTimeout(() => {
-  mosquitoAudio.pause();
-  mosquitoAudio.currentTime = 0; 
-}, 2000);
-  }
-
-  if (stateKey === "ankleLoss") {
-    const ankleAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ankleBreak-audio.mp3");
-    ankleAudio.play();
-    setTimeout(() => {
-  ankleAudio;Audio.pause();
-  ankleAudio.currentTime = 0; 
-}, 2000);
-  }
-
-  if (stateKey === "snakeLoss") {
-    const snakeAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/snakeRattle-audio.mp3");
-    snakeAudio.play();
-    setTimeout(() => {
-  snakeAudio.pause();
-  snakeAudio.currentTime = 0; 
-}, 2000);
-  }
-/*  // For copy paste DELETE LATER
-  if (stateKey === "") {
-    const mosquitoAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/-audio.mp3");
-    mosquitoAudio.play();
-    setTimeout(() => {
-  mosquitoAudio.pause();
-  mosquitoAudio.currentTime = 0; 
-}, 2000);
-  }
-*/
-  //console.log("Loss triggered:", stateKey);
 }
-// do I need handle win? or take bones.gif and separate so audio can be true and visual implicated elsewhere
-
-function handleWin(stateKey) {
-  const state = game[stateKey];
-  console.log("handleWin triggered with:", stateKey);
-  questionEl.textContent = state.text;
-  
-  if (state.winType === "treasure") {
-    const treasure2Audio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3");
-    console.error("Audio playing");
-    treasure2Audio.play();
-    
-    setTimeout(() => {
-  treasure2Audio.pause();
-  treasure2Audio.currentTime = 0; 
-}, 1000);
-  }
-}
-
-/* // check if audio file is working
-function audio() {
-  const audio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3");
-  audio.play();
-}
-audio()
-*/
 
 function addResetButton() {
   const resetBtn = document.createElement("button");
@@ -550,3 +505,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 render(currentState);
+/*
+// handle win function
+function handleWin(stateKey) {
+  const state = game[stateKey];
+  console.log("handleWin triggered with:", stateKey);
+  questionEl.textContent = state.text;
+  
+  if (state.winType === "treasure") {
+    const treasure2Audio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3");
+    console.error("Audio playing");
+    treasure2Audio.play();
+    
+    setTimeout(() => {
+  treasure2Audio.pause();
+  treasure2Audio.currentTime = 0; 
+}, 1000);
+  }
+}
+*/
