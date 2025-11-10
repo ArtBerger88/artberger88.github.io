@@ -50,7 +50,9 @@ const game = {
   },
   win: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
-    options: []
+    options: [],
+    isLoss: false,
+    winType: "treasure"
   },
   beachLoss: {
     text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
@@ -384,17 +386,29 @@ const buttonsEl = document.getElementById("buttons");
 let currentState = "start";
 
 function render(stateKey) {
+  console.log("render called with:", stateKey);
   const state = game[stateKey];
   currentState = stateKey;
 
   buttonsEl.innerHTML = "";
-
+  
+  console.log("Checking isLoss:", state.isLoss)
+//state not loading for win
   if (state.isLoss === true) {
-    handleLoss(stateKey);  
-    addResetButton();
-    return;
-  }
+  handleLoss(stateKey);
+  addResetButton();
+  return;
+}
+  if (state.winType) {
+  console.log("handleWin triggered with:", stateKey);
+  
+  handleWin(stateKey);
+  addResetButton();
+  return;
+}
 
+
+console.log("State object:", state)
   questionEl.textContent = state.text;
   buttonsEl.innerHTML = "";
 
@@ -438,8 +452,62 @@ function handleLoss(stateKey) {
   mosquitoAudio.currentTime = 0; 
 }, 2000);
   }
+
+  if (stateKey === "ankleLoss") {
+    const ankleAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ankleBreak-audio.mp3");
+    ankleAudio.play();
+    setTimeout(() => {
+  ankleAudio;Audio.pause();
+  ankleAudio.currentTime = 0; 
+}, 2000);
+  }
+
+  if (stateKey === "snakeLoss") {
+    const snakeAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/snakeRattle-audio.mp3");
+    snakeAudio.play();
+    setTimeout(() => {
+  snakeAudio.pause();
+  snakeAudio.currentTime = 0; 
+}, 2000);
+  }
+/*  // For copy paste DELETE LATER
+  if (stateKey === "") {
+    const mosquitoAudio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/-audio.mp3");
+    mosquitoAudio.play();
+    setTimeout(() => {
+  mosquitoAudio.pause();
+  mosquitoAudio.currentTime = 0; 
+}, 2000);
+  }
+*/
   //console.log("Loss triggered:", stateKey);
 }
+// do I need handle win? or take bones.gif and separate so audio can be true and visual implicated elsewhere
+
+function handleWin(stateKey) {
+  const state = game[stateKey];
+  console.log("handleWin triggered with:", stateKey);
+  questionEl.textContent = state.text;
+  
+  if (state.winType === "treasure") {
+    const treasure2Audio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3");
+    console.error("Audio playing");
+    treasure2Audio.play();
+    
+    setTimeout(() => {
+  treasure2Audio.pause();
+  treasure2Audio.currentTime = 0; 
+}, 1000);
+  }
+}
+
+/* // check if audio file is working
+function audio() {
+  const audio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3");
+  audio.play();
+}
+audio()
+*/
 
 function addResetButton() {
   const resetBtn = document.createElement("button");
@@ -467,6 +535,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("keydown", (e) => {
     if (e.shiftKey && e.key.toLowerCase() === "s") {
+      hatchAudio.currentTime = 0;
+      hatchAudio.play();
       render("secretHatch");
     }
   });
@@ -477,37 +547,6 @@ document.addEventListener("DOMContentLoaded", () => {
   hatchAudio.play();
   render("secretHatch");
 });
-
-
-/*
-//Mosquito Sound function-
-
-function mosquitoSound() {
-  document.getElementById("question").textContent =
-    "You got stuck in the thicket and eaten by mosquitoes!!!! YOU LOSE";
-  // Play mosquito sound
-  const audio = document.getElementById("game-audio");
-  audio.src = "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/mosquito-audio.mp3";
-  audio.play();
-  
-}
-
-//Timeout for secret hatch-
-
-  secretZone.addEventListener("touchstart", () => {
-    pressTimer = setTimeout(() => {
-      console.log("Secret branch triggered via long press!");
-      if (game && game.secretHatch && typeof game.secretHatch.start === "function") {
-        render("secretHatch");
-      } else {
-        console.warn("Secret hatch not available or misconfigured.");
-      }
-    }, 1500);
-  });
-
-  secretZone.addEventListener("touchend", () => {
-    clearTimeout(pressTimer);
-  });*/
 });
 
 render(currentState);

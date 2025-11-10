@@ -70,6 +70,10 @@ button:hover {
     color: white; 
 }
     
+#game-image {
+  align-content: center;
+}
+
 pre { 
     white-space: pre-wrap; 
 }
