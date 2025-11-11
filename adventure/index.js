@@ -11,7 +11,7 @@ const game = {
     audioType: "darth"
   },
   split: {
-    text: "Can you find the PATH? You are walking down a road and come to a 4 way split.\n Do you go STRAIGHT, LEFT, RIGHT or BACK?",
+    text: "Can you find the PATH? You are walking down a road and come to a 4 way split.\n\n Do you go STRAIGHT, LEFT, RIGHT or BACK?",
     options: ["STRAIGHT", "LEFT", "RIGHT", "BACK"],
     next: {
       left: "leftThicket",
@@ -24,7 +24,7 @@ const game = {
 
   // LEFT branch
   leftThicket: {
-    text: "You come to a thicket of bushes. Go AROUND or THRU?",
+    text: "You come to a thicket of bushes.\n\n Go AROUND or THRU?",
     options: ["AROUND", "THRU"],
     next: { around: "leftBeach", thru: "mosquitoLoss" }
   },
@@ -37,7 +37,7 @@ const game = {
     audioType: "mosquito"
   },
   leftBeach: {
-    text: "You come to a sandy beach. WALK the beach or SWIM the waters?",
+    text: "You come to a sandy beach.\n WALK the beach or SWIM the waters?",
     options: ["WALK", "SWIM"],
     next: { walk: "leftPathChoice", swim: "swimLoss" }
   },
@@ -48,7 +48,7 @@ const game = {
     lossType: "swimLoss"
   },
   leftPathChoice: {
-    text: "You walked for a while until you see a path. Do you walk the PATH or follow the BEACH?",
+    text: "You walked for a while until you see a path.\n\n Do you walk the PATH or follow the BEACH?",
     options: ["PATH", "BEACH"],
     next: { path: "win", beach: "beachLoss" }
   },
@@ -67,7 +67,7 @@ const game = {
 
   // RIGHT branch
   rightSplit: {
-    text: "You walk for awhile coming to another split in the road. Do you go LEFT or RIGHT?",
+    text: "You walk for awhile coming to another split in the road.\n\n Do you go LEFT or RIGHT?",
     options: ["LEFT", "RIGHT"],
     next: { right: "snakeLoss", left: "rightSound" }
   },
@@ -80,7 +80,7 @@ const game = {
     audioType: "snake"
   },
   rightSound: {
-    text: "You continue until you hear a sound, do you investigate YES or NO",
+    text: "You continue until you hear a sound.\n\n Do you investigate YES or NO",
     options: ["YES", "NO"],
     next: { yes: "dragonLoss", no: "clearingChoice" }
   },
@@ -93,18 +93,18 @@ const game = {
     audioType: "dragFire"
   },
   clearingChoice: {
-    text: "You ignore the sound and keep going, you see a clearing, head TOWARDS or AWAY from the clearing??",
+    text: "You ignore the sound, keep going and see a clearing,\n\n head TOWARDS or AWAY from the clearing?",
     options: ["TOWARDS", "AWAY"],
     next: { away: "forestLoss", towards: "beachChoice" }
   },
   forestLoss: {
-    text: "You head away for the clearing, the forest darkens and you lose your way!!!!\n\n YOU LOSE",
+    text: "You head away from the clearing, the forest darkens and you lose your way!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "forestLoss"
   },
   beachChoice: {
-    text: "You head thru the clearing and onto a beach, you see a path, follow the PATH or BEACH?",
+    text: "You head thru the clearing and onto a beach and see a path.\n\n Follow the PATH or the BEACH?",
     options: ["PATH", "BEACH"],
     next: { path: "win", beach: "beachLoss" }
   },
@@ -123,7 +123,7 @@ const game = {
 
   // STRAIGHT branch
   cottage: {
-    text: "The road seems to go on forever. Eventually you arrive at a cottage, do you go in YES or NO?",
+    text: "The road seems to go on forever. Eventually you arrive at a cottage\n\n Do you go in YES or NO?",
     options: ["YES", "NO"],
     next: { yes: "cottageStay", no: "dazedLoss" }
   },
@@ -134,7 +134,7 @@ const game = {
     lossType: "dazedLoss"
   },
   cottageStay: {
-    text: "You enter the cottage, it appears to have been abandoned for quite some time.\n You scavenge food and water, do you spend the night, STAY or GO??",
+    text: "You enter the cottage, it appears to have been abandoned for quite some time.\n You scavenge food and water.\n\n Do you spend the night, STAY or GO??",
     options: ["STAY", "GO"],
     next: { stay: "bearLoss", go: "trailChoice" }
   },
@@ -147,7 +147,7 @@ const game = {
     audioType: "bear"
   },
   trailChoice: {
-    text: "You ate some rations and head back out. Theres the obvious ROAD,\n You also see a trail behind the cottage, ROAD or TRAIL? ?",
+    text: "You ate some rations and head back out. Theres the obvious ROAD.\n You also see a trail behind the cottage.\n\n Head towards the ROAD or TRAIL? ?",
     options: ["ROAD", "TRAIL"],
     next: { road: "drifterEnd", trail: "hillChoice" }
   },
@@ -156,7 +156,7 @@ const game = {
     options: []
   },
   hillChoice: {
-    text: "The route was rough and hard to traverse it took longer than expected.\n You arrive at a hill, do you go AROUND or CLIMB the hill?",
+    text: "The route was rough and hard to traverse it took longer than expected.\n You arrive at a hill.\n\n Do you go AROUND or CLIMB the hill?",
     options: ["AROUND", "CLIMB"],
     next: { climb: "ankleLoss", around: "riverChoice" }
   },
@@ -169,7 +169,7 @@ const game = {
     audioType: "ankle"
   },
   riverChoice: {
-    text: "You go around the hill safely coming a to river, do you CROSS or FOLLOW the river?",
+    text: "You go around the hill safely coming a to river.\n\n Do you attempt to CROSS or FOLLOW the river?",
     options: ["CROSS", "FOLLOW"],
     next: { cross: "currentLoss", follow: "riverBeach" }
   },
@@ -180,18 +180,18 @@ const game = {
     lossType: "currentLoss"
   },
   riverBeach: {
-    text: "You follow the river it leads to a beach, do you SWIM or WALK the beach?",
+    text: "You follow the river it leads to a beach.\n\n Do you try and SWIM or WALK the beach?",
     options: ["SWIM", "WALK"],
     next: { swim: "sharkLoss", walk: "pathTiming" }
   },
   sharkLoss: {
-    text: "You swim and swim, until a shark eats you!!!!\n\n YOU LOSE",
+    text: "You swim and swim, indeed you swim, until a shark eats you!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "sharkLoss"
   },
   pathTiming: {
-    text: "You walk the beach until you see a path, go down the path NOW or LATER?",
+    text: "You walk the beach until you see a path.\n\n Do you go down the path NOW or LATER?",
     options: ["NOW", "LATER"],
     next: { now: "win", later: "later" }
   },
@@ -210,23 +210,38 @@ const game = {
 
   // BACK branch
   backReturn: {
-    text: "You go back the way you came. BACK or NO?",
+    text: "You go back the way you came.\n\n BACK or NO?",
     options: ["BACK", "NO"],
-    next: { back: "loopyLoss", no: "backSplit" }
+    next: { back: "loopy", no: "backSplit" }
   },
-  loopyLoss: {
-    text: "You go back again, your stuck in a loop, not a real loop, just a loopy loop!!!!\n\n YOU LOSE",
+ loopy: {
+    text: "You go back again. Your stuck in a loop, not a real loop, just a Loopy Loop!!!!\n\n YOU LOSE",
+    options: ["LOOPYLOOP"],
+    next: {loopyloop: "loopLoop"},
+  },
+  loopLoop: {
+    text: "You go back again? Your stuck in a loop, not a real loop, just a Loopy Loop!!!!\n\n YOU LOSE",
+    options: ["LOOPYLOOP"],
+    next: {loopyloop: "loopLoopLoop"},
+  },
+  loopLoopLoop: {
+    text: "You go back again?? Your stuck in a loop, not a real loop, just a Loopy Loop!!!!\n\n YOU LOSE",
+    options: ["LOOPYLOOP"],
+    next: {loopyloop: "loopLoss"},
+  },
+  loopLoss: {
+    text: "You go back again??? For the final time you die in a loop, not a real loop, just a Loopy Loop!!!!\n\n YOU LOSE FOR REAL THIS TIME",
     options: [],
     isLoss: true,
-    lossType: "loopyLoss"
+    lossType: "loopy"
   },
   backSplit: {
-    text: "You stopped going back just as you began to not recognize the reverse route you took,\n theres a road that looks promicing do you go LEFT or RIGHT?",
+    text: "You stopped going back just as you began to not recognize the reverse route you took,\n theres a road that looks like the right way.\n\n Do you go LEFT or RIGHT?",
     options: ["LEFT", "RIGHT"],
     next: { left: "kirbyLoss", right: "streamChoice" }
   },
   kirbyLoss: {
-    text: "You go left you come to a downed tree blocking your route, you try moving the tree, to no avail.\n All your energy is spent you sit down for a little while.\n Kirby comes around the corner and sucks you up!!!!\n\n YOU LOSE",
+    text: "You go left you come to a downed tree blocking your route.\n You try moving the tree, to no avail.\n All your energy is spent so you sit down for a little while.\n Moments later Kirby comes around the corner and sucks you up!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "kirbyLoss",
@@ -234,7 +249,7 @@ const game = {
     audioType: "kirby"
   },
   streamChoice: {
-    text: "You go down the right way you feel quite confident this will lead to somewhere promicing, a land of riches perhaps.\n Halfway thru your daydream you come to a stream do you SWIM or FOLLOW the stream?",
+    text: "You go down the right way you feel quite confident this will lead to somewhere promicing, a land of riches perhaps.\n Halfway thru your daydream you come to a stream.\n\n Do you SWIM or FOLLOW the stream?",
     options: ["SWIM", "FOLLOW"],
     next: { swim: "piranhaLoss", follow: "streamFollow" }
   },
@@ -245,12 +260,12 @@ const game = {
     lossType: "piranhaLoss"
   },
   streamFollow: {
-    text: "You follow the stream, it has to lead somewhere but theres nothing in sight so far.\n Do you STRAY away or FOLLOW the stream?",
+    text: "You follow the stream, it has to lead somewhere but theres nothing in sight so far.\n\n Do you STRAY away or FOLLOW the stream?",
     options: ["STRAY", "FOLLOW"],
     next: { stray: "cowLoss", follow: "campChoice" }
   },
   cowLoss: {
-    text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches,\n YOU FIND COWS!!!!\n\n YOU LOSE",
+    text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches.\n\n YOU FIND COWS!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "cowLoss",
@@ -258,12 +273,12 @@ const game = {
     audioType: "cow"
   },
   campChoice: {
-    text: "You continue to follow the stream for a day, stopping only to catch a fish do you stop to make CAMP or NOT?",
+    text: "You continue to follow the stream for a day, stopping only to catch a fish.\n\n Do you stop to make CAMP or NOT?",
     options: ["CAMP", "NOT"],
     next: { not: "wolfLoss", camp: "morningChoice" }
   },
   wolfLoss: {
-    text: "You decide to continue without making camp, you are mighty hungry by the time night falls, and so are the wolves that just picked up your scent.\n Its not long before you are swarmed by the PACK that eats you for their dinner!!!!\n\n YOU LOSE",
+    text: "You decide to continue without making camp, you are mighty hungry by the time night falls.\n So are the wolves that just picked up your scent.\n Its not long before you are swarmed by the PACK that eats you for their dinner!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "wolfLoss",
@@ -271,7 +286,7 @@ const game = {
     audioType: "wolf"
   },
   morningChoice: {
-    text: "You made camp setting up a makeshift shack out of sticks and tree limbs,\n also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enjoying the beutiful clear night.\n\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day. You pack up camp do you FOLLOW the stream or NOT?",
+    text: "You made camp setting up a makeshift shack out of sticks and tree limbs,\n also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enjoying the beutiful clear night.\n\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day.\n\n You pack up camp do you FOLLOW the stream or NOT?",
     options: ["FOLLOW", "NOT"],
     next: { not: "bullLoss", follow: "finalBeach" }
   },
@@ -282,7 +297,7 @@ const game = {
     lossType: "bullLoss"
   },
   finalBeach: {
-    text: "Knowing this will lead the right way you follow the stream, after walking for miles you finally see a BEACH and PATH.\n Which way will you go?",
+    text: "Knowing this will lead the right way you follow the stream, after walking for miles you finally see a BEACH and PATH.\n\n Which way will you go?",
     options: ["BEACH", "PATH"],
     next: { beach: "saltyLoss", path: "win" }
   },
@@ -301,17 +316,17 @@ const game = {
 
   // SECRET branch
   secretHatch: {
-    text: "You found a secret hatch that is sealed.\n You can LOOK around, PRY, or SMACK the lock?",
+    text: "You found a secret hatch that is sealed.\n\ You can LOOK around, PRY, or SMACK the lock?",
     options: ["LOOK", "PRY", "SMACK"],
     next: { look: "lookAround", pry: "pryLoop", smack: "smackChoice" }
   },
   lookAround: {
-    text: "You look around, there is a MAT a ROCK, and a HOLE in the wall.",
+    text: "You look around.\n There is a MAT a ROCK, and a HOLE in the wall.",
     options: ["MAT", "ROCK", "HOLE"],
     next: { mat: "matChoice", rock: "rockChoice", hole: "armLoss" }
   },
     matChoice: {
-    text: "You look under the mat on the floor, spotting a key that unlocks the lock, do you go THRU or WAIT?",
+    text: "You look under the mat on the floor, spotting a key that unlocks the lock.\n\n Do you go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "jawasWin",
@@ -319,7 +334,7 @@ const game = {
     }
   },
   jawasWin: {
-    text: "You go thru the secret hatch finding jawas that trade you a few good droids for the right amount of credits!!!!\n\n YOU WIN but so do the jawas",
+    text: "You go thru the secret hatch finding Jawa's that trade you a few good droids for the right amount of credits!!!!\n\n YOU WIN but so do the Jawa's",
     options: [],
     isAudio: true,
     audioType: "jawas"
@@ -331,7 +346,7 @@ const game = {
     lossType: "waitLoss"
   },
   rockChoice: {
-    text: "You pick up the rock, finding no key under it. You can either put the rock DOWN or SMASH the lock?",
+    text: "You pick up the rock, finding no key under it.\n\n You can either put the rock DOWN or SMASH the lock?",
     options: ["DOWN", "SMASH"],
     next: {
       down: "hopeChoice",
@@ -352,7 +367,7 @@ const game = {
     audioType: "hope"
   },
   smashHatch: {
-    text: "You decide the only thing left to do is smash the lock.\n With a great hurl and flawless technique the rock smashes the lock breaking the mechanism and crumbiling the rock also, the hatch flings open. Do you go THRU or WAIT?",
+    text: "You decide the only thing left to do is smash the lock.\n With a great hurl and flawless technique the rock smashes the lock breaking the mechanism,\n the hatch flings open.\n\n Do you go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "lukeWin",
@@ -372,14 +387,14 @@ const game = {
     lossType: "armLoss"
   },
   pryLoop: {
-    text: "You PRY and PRY. oh how you PRY.",
+    text: "You PRY and PRY. Oh how you PRY.",
     options: ["PRY"],
     next: {
       pry: "pryLoop2"
     }
   },
   pryLoop2: {
-    text: "You PRY.... more?\n It budges. With a little intuition on your side you PRY again and the hatch opens. Go THRU or WAIT?",
+    text: "You PRY.... more?\n It budges. With a little intuition on your side you PRY again and the hatch opens.\n\n Go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "yodaWin",
@@ -387,7 +402,7 @@ const game = {
     }
   },
   yodaWin: {
-    text: 'You have found GrandMaster Yoda!!!! "Found me you have, in order, congragulations is!!!!"\n\n YOU WIN',
+    text: 'You have found GrandMaster Yoda!!!!\n "Found me you have, in order, congragulations is!!!!"\n\n YOU WIN',
     options: [],
     isAudio: true,
     audioType: "yoda"
@@ -399,7 +414,7 @@ const game = {
     audioType: "grandYoda"
   },
   smackChoice: {
-    text: "You smack, hear a whack and it opens. Go THRU or WAIT?",
+    text: "You smack, hear a whack and it opens.\n\n Go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "leiaWin",
@@ -496,7 +511,7 @@ function playAudio(audioType) {
   setTimeout(() => {
     audio.pause();
     audio.currentTime = 0;
-  }, 5000);
+  }, 4500);
 }
 
 function handleLoss(stateKey) {
@@ -556,8 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
   render("secretHatch");
 });
 });
-console.log(game.text) 
-console.log(game.audio)
+
 render(currentState);
 /*
 // handle win function
