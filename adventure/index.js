@@ -202,7 +202,7 @@ const game = {
     audioType: "treasure"
   },
   later: {
-    text: "You pateince is rewarding, The path leads you to Treasures beyond anything you could fathom.\n What a wild adventure!!!! YOU WIN",
+    text: "You pateince is rewarding, The path leads you to Treasures beyond anything you could fathom.\n What a wild adventure!!!!\n\n YOU WIN",
     options: [],
     isAudio: true,
     audioType: "treasure2"
