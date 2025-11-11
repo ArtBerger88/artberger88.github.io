@@ -191,7 +191,7 @@ const game = {
   pathTiming: {
     text: "You walk the beach until you see a path, go down the path NOW or LATER?",
     options: ["NOW", "LATER"],
-    next: { now: "win", later: "win" }
+    next: { now: "win", later: "later" }
   },
   now: {
     text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
@@ -445,7 +445,6 @@ const audioMap = {
   kirby: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/windSuction-audio.mp3",
   wolf: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/wolfHowl-audio.mp3",
   yoda: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/yoda-audio.mp3",
-  // Add more audio types here as needed
 };
 let currentState = "start";
 
@@ -455,7 +454,6 @@ function render(stateKey) {
 
   buttonsEl.innerHTML = "";
 
-//state not loading for win
 if (state.isAudio && state.audioType) {
   playAudio(state.audioType);
 }  
@@ -555,7 +553,8 @@ document.addEventListener("DOMContentLoaded", () => {
   render("secretHatch");
 });
 });
-
+console.log(game.text) 
+console.log(game.audio)
 render(currentState);
 /*
 // handle win function
