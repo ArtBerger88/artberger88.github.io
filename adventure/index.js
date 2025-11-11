@@ -5,8 +5,10 @@ const game = {
     next: { yes: "split", no: "notReady" }
   },
   notReady: {
-    text: "You will never be truly ready.",
-    options: []
+    text: "Are we ever truly ready?",
+    options: [],
+    isAudio: true,
+    audioType: "darth"
   },
   split: {
     text: "Can you find the PATH? You are walking down a road and come to a 4 way split.\n Do you go STRAIGHT, LEFT, RIGHT or BACK?",
@@ -27,7 +29,7 @@ const game = {
     next: { around: "leftBeach", thru: "mosquitoLoss" }
   },
   mosquitoLoss: {
-    text: "You got stuck in the thicket and eaten by mosquitoes!!!! YOU LOSE",
+    text: "You got stuck in the thicket and eaten by mosquitoes!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "mosquitoLoss",
@@ -40,7 +42,7 @@ const game = {
     next: { walk: "leftPathChoice", swim: "swimLoss" }
   },
   swimLoss: {
-    text: "You attempted to brave the waters, to no avail!!!! YOU LOSE",
+    text: "You attempted to brave the waters, to no avail!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "swimLoss"
@@ -51,13 +53,13 @@ const game = {
     next: { path: "win", beach: "beachLoss" }
   },
   win: {
-    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    text: "The path leads you to Treasures.\n What a wild adventure!!!!\n\n YOU WIN",
     options: [],
     isAudio: true,
     audioType: "treasure"
   },
   beachLoss: {
-    text: "You continue down the beach for days until you can no longer walk!!!! YOU LOSE",
+    text: "You continue down the beach for days until you can no longer walk!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "beachLoss"
@@ -70,7 +72,7 @@ const game = {
     next: { right: "snakeLoss", left: "rightSound" }
   },
   snakeLoss: {
-    text: "You continue right yet again, only to be wrong, a GIANT snake eats you!!!! YOU LOSE",
+    text: "You continue right yet again, only to be wrong, a GIANT snake eats you!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "snakeLoss",
@@ -83,11 +85,11 @@ const game = {
     next: { yes: "dragonLoss", no: "clearingChoice" }
   },
   dragonLoss: {
-    text: "You investigate, heading around the corner and see a DRAGON sitting upon a pile of gold,\n he turns you to ash!!!! YOU LOSE",
+    text: "You investigate, heading around the corner and see a DRAGON sitting upon a pile of gold,\n he turns you to ash!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "dragonLoss",
-    isaudio: true,
+    isAudio: true,
     audioType: "dragFire"
   },
   clearingChoice: {
@@ -96,7 +98,7 @@ const game = {
     next: { away: "forestLoss", towards: "beachChoice" }
   },
   forestLoss: {
-    text: "You head away for the clearing, the forest darkens and you lose your way!!!! YOU LOSE",
+    text: "You head away for the clearing, the forest darkens and you lose your way!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "forestLoss"
@@ -107,13 +109,13 @@ const game = {
     next: { path: "win", beach: "beachLoss" }
   },
   win: {
-    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    text: "The path leads you to Treasures.\n What a wild adventure!!!!\n\n YOU WIN",
     options: [],
     isaudio: true,
     audioType: "treasure"
   },
   beachLoss: {
-    text: "You continue down the beach for days until you turn into SANDMAN!!!! YOU LOSE",
+    text: "You continue down the beach for days until you turn into SANDMAN!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "beachLoss"
@@ -126,7 +128,7 @@ const game = {
     next: { yes: "cottageStay", no: "dazedLoss" }
   },
   dazedLoss: {
-    text: "You continue walking for days and daze only to become dazed!!!! YOU LOSE",
+    text: "You continue walking for days and daze only to become dazed!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "dazedLoss"
@@ -137,11 +139,11 @@ const game = {
     next: { stay: "bearLoss", go: "trailChoice" }
   },
   bearLoss: {
-    text: "You fall asleep with a full belly next to a warm fire.\n A bear smells your good fortune, ravenges the cottage and tears you to shreds!!!! YOU LOSE",
+    text: "You fall asleep with a full belly next to a warm fire.\n A bear smells your good fortune, ravenges the cottage and tears you to shreds!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "bearLoss",
-    isaudio: true,
+    isAudio: true,
     audioType: "bear"
   },
   trailChoice: {
@@ -150,7 +152,7 @@ const game = {
     next: { road: "drifterEnd", trail: "hillChoice" }
   },
   drifterEnd: {
-    text: "The route was rough and hard to traverse, you run into a blockade of cars, forcing you to stop for the night.\n You eat sleep and tell spooky stories to yourself over your makeshift campfire.\n Becoming quite attached to yourself You dont lose but you also dont win,\n you live your life as a nomad and wandering drifter meandering from village to town in search of an exact clone of yourself to keep you company for the rest of your drifting days.",
+    text: "The route was rough and hard to traverse, you run into a blockade of cars, forcing you to stop for the night.\n\n You eat, sleep, and tell spooky stories to yourself over your makeshift campfire.\n Becoming quite attached to yourself.\n\n You dont lose but you also dont win.\n\n You live your life as a nomad and wandering drifter meandering from village to town in search of an exact clone of yourself to keep you company for the rest of your drifting days.",
     options: []
   },
   hillChoice: {
@@ -159,7 +161,7 @@ const game = {
     next: { climb: "ankleLoss", around: "riverChoice" }
   },
   ankleLoss: {
-    text: "You climb the hill that seems like a mountain, immensely tired now you fall climbing down the hill breaking your ankle!!!! YOU LOSE",
+    text: "You climb the hill that seems like a mountain,\n immensely tired now you fall climbing down the hill breaking your ankle!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "ankleLoss",
@@ -172,7 +174,7 @@ const game = {
     next: { cross: "currentLoss", follow: "riverBeach" }
   },
   currentLoss: {
-    text: "You attempt to cross the river but are swept away by current!!!! YOU LOSE",
+    text: "You attempt to cross the river but are swept away by current!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "currentLoss"
@@ -183,7 +185,7 @@ const game = {
     next: { swim: "sharkLoss", walk: "pathTiming" }
   },
   sharkLoss: {
-    text: "You swim and swim, until a shark eats you!!!! YOU LOSE",
+    text: "You swim and swim, until a shark eats you!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "sharkLoss"
@@ -194,13 +196,13 @@ const game = {
     next: { now: "win", later: "later" }
   },
   now: {
-    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    text: "The path leads you to Treasures.\n What a wild adventure!!!!\n\n YOU WIN",
     options: [],
     isAudio: true,
     audioType: "treasure"
   },
   later: {
-    text: "You pateince is rewarding, The path leads you to Treasures beyond anything you could fathom, what a wild adventure!!!! YOU WIN",
+    text: "You pateince is rewarding, The path leads you to Treasures beyond anything you could fathom.\n What a wild adventure!!!! YOU WIN",
     options: [],
     isAudio: true,
     audioType: "treasure2"
@@ -213,7 +215,7 @@ const game = {
     next: { back: "loopyLoss", no: "backSplit" }
   },
   loopyLoss: {
-    text: "You go back again, your stuck in a loop, not a real loop, just a loopy loop!!!! YOU LOSE",
+    text: "You go back again, your stuck in a loop, not a real loop, just a loopy loop!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "loopyLoss"
@@ -224,7 +226,7 @@ const game = {
     next: { left: "kirbyLoss", right: "streamChoice" }
   },
   kirbyLoss: {
-    text: "You go left you come to a downed tree blocking your route, you try moving the tree, to no avail.\n All your energy is spent you sit down for a little bit, Kirby comes around the corner and sucks you up!!!! YOU LOSE",
+    text: "You go left you come to a downed tree blocking your route, you try moving the tree, to no avail.\n All your energy is spent you sit down for a little while.\n Kirby comes around the corner and sucks you up!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "kirbyLoss",
@@ -237,7 +239,7 @@ const game = {
     next: { swim: "piranhaLoss", follow: "streamFollow" }
   },
   piranhaLoss: {
-    text: "You go for a dip enjoying the perfect water temp until you get eaten by piranhas!!!! YOU LOSE",
+    text: "You go for a dip enjoying the perfect water temp until you get eaten by piranhas!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "piranhaLoss"
@@ -248,7 +250,7 @@ const game = {
     next: { stray: "cowLoss", follow: "campChoice" }
   },
   cowLoss: {
-    text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches,\n YOU FIND COWS!!!! YOU LOSE",
+    text: "You stray away from the stream knowing it wasnt a good idea.\n You walk and walk through feilds of flowers, feilds of wheat, and feilds of cows but you dont find a land of riches,\n YOU FIND COWS!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "cowLoss",
@@ -261,7 +263,7 @@ const game = {
     next: { not: "wolfLoss", camp: "morningChoice" }
   },
   wolfLoss: {
-    text: "You decide to continue without making camp, you are mighty hungry by the time night falls, and so are the wolves that just picked up your scent.\n Its not long before you are swarmed by a PACK of wolves!!!! YOU LOSE",
+    text: "You decide to continue without making camp, you are mighty hungry by the time night falls, and so are the wolves that just picked up your scent.\n Its not long before you are swarmed by the PACK that eats you for their dinner!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "wolfLoss",
@@ -269,12 +271,12 @@ const game = {
     audioType: "wolf"
   },
   morningChoice: {
-    text: "You made camp setting up a makeshift shack out of sticks and tree limbs also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enjoying the beutiful clear night.\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day. You pack up camp do you FOLLOW the stream or NOT?",
+    text: "You made camp setting up a makeshift shack out of sticks and tree limbs,\n also building a fire and cooking your delicious fish you caught earlier.\n Eating it and enjoying the beutiful clear night.\n\n In the morning you wake up with a full belly and plenty of energy ready to tackle the day. You pack up camp do you FOLLOW the stream or NOT?",
     options: ["FOLLOW", "NOT"],
     next: { not: "bullLoss", follow: "finalBeach" }
   },
   bullLoss: {
-    text: "You do not continue to follow the stream instead walking in a diffent direction.\n This leads to a herd of bulls, you are wearing red so all the bulls charge at you!!!! YOU LOSE",
+    text: "You do not continue to follow the stream instead walking in a diffent direction.\n This leads to a herd of bulls, you are wearing red so all the bulls charge at you!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "bullLoss"
@@ -285,13 +287,13 @@ const game = {
     next: { beach: "saltyLoss", path: "win" }
   },
   saltyLoss: {
-    text: "You walk the beach and enjoy the sand going swimming at one point, tasting the water,\n knowing that you would be as salty as the ocean when you never reach the path to treasure!!!! YOU LOSE",
+    text: "You walk the beach and enjoy the sand going swimming at one point, tasting the water,\n knowing that you would be as salty as the ocean when you never reach the path to treasure!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "saltyLoss"
   },
   win: {
-    text: "The path leads you to Treasures, what a wild adventure!!!! YOU WIN",
+    text: "The path leads you to Treasures.\n What a wild adventure!!!!\n\n YOU WIN",
     options: [],
     isAudio: true,
     audioType: "treasure"
@@ -317,13 +319,13 @@ const game = {
     }
   },
   jawasWin: {
-    text: "You go thru the secret hatch finding jawas that trade you a few good droids for the right amount of credits!!!!YOU WIN but so do the jawas",
+    text: "You go thru the secret hatch finding jawas that trade you a few good droids for the right amount of credits!!!!\n\n YOU WIN but so do the jawas",
     options: [],
     isAudio: true,
     audioType: "jawas"
   },
   waitLoss: {
-    text: "You wait and go nowhere, it seems you are still where you started!!!! YOU LOSE",
+    text: "You wait and go nowhere, it seems you are still where you started!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "waitLoss"
@@ -337,20 +339,20 @@ const game = {
     }
   },
   hopeChoice: {
-    text: "You put the rock down also letting yourself down. Obi Wan is not here there is no HOPE!!!! You Lose.",
+    text: "You put the rock down also letting yourself down. Obi Wan is not here there is no HOPE!!!!\n\n You Lose.",
     options: ["HOPE"],
     next: {
       hope: "forceWin"
     }
   },
   forceWin: {
-    text: "OBI WAN was with us, he is always with us, you use the force and i am compelled to give you all the riches in this game!!!! YOU WIN",
+    text: "OBI WAN was with us, he is always with us,\n you use the force and I am compelled to give you all the riches in this game!!!!\n\n YOU WIN",
     options: [],
     isAudio: true,
     audioType: "hope"
   },
   smashHatch: {
-    text: "You decide the only thing left to do is smash the lock. With a great hurl and flawless technique the rock smashes the lock breaking the mechanism and crumbiling the rock also, the hatch flings open. Do you go THRU or WAIT?",
+    text: "You decide the only thing left to do is smash the lock.\n With a great hurl and flawless technique the rock smashes the lock breaking the mechanism and crumbiling the rock also, the hatch flings open. Do you go THRU or WAIT?",
     options: ["THRU", "WAIT"],
     next: {
       thru: "lukeWin",
@@ -358,13 +360,13 @@ const game = {
     }
   },
   lukeWin: {
-    text: "You go thru the secret hatch finding Luke Skywalker!!!! YOU WIN",
+    text: "You go thru the secret hatch finding Luke Skywalker!!!!\n\n YOU WIN",
     options: [],
     isAudio: true,
     audioType: "luke"
   },
   armLoss: {
-    text: "You spot a hole in the wall, thinking it could be something useful you reach in.\n To no surprise you lose your arm and the game to the secret and arm eating monster!!!! YOU LOSE",
+    text: "You spot a hole in the wall, thinking it could be something useful you reach in.\n To no surprise you lose your arm and the game to the secret and arm eating monster!!!!\n\n YOU LOSE",
     options: [],
     isLoss: true,
     lossType: "armLoss"
@@ -385,13 +387,13 @@ const game = {
     }
   },
   yodaWin: {
-    text: 'You have found GrandMaster Yoda!!!! "Found me you have, in order, congragulations is!!!!" YOU WIN',
+    text: 'You have found GrandMaster Yoda!!!! "Found me you have, in order, congragulations is!!!!"\n\n YOU WIN',
     options: [],
     isAudio: true,
     audioType: "yoda"
   },
   yodaMasterWin: {
-    text: 'You have found GrandMaster Yoda. You hear....\n "Patience you covet, Found me you have, in order congragulations is!!!!"\n You study under the great Grandmaster Yoda for years and become a far greater jedi than I could ever be.\n He grants you the Rank of MASTER!!!!\n YOU WIN',
+    text: 'You have found GrandMaster Yoda. You hear....\n "Patience you covet, Found me you have, in order congragulations is!!!!"\n You study under the great Grandmaster Yoda for years and become a far greater jedi than I could ever be.\n He grants you the Rank of \n MASTER!!!!\n\n YOU WIN',
     options: [],
     isAudio: true,
     audioType: "grandYoda"
@@ -405,7 +407,7 @@ const game = {
     }
   },
   leiaWin: {
-    text: "You go thru the secret hatch finding Princess Leia in the Jabba slave outfit!!!! YOU WIN AT LIFE",
+    text: "You go thru the secret hatch finding Princess Leia in the Jabba slave outfit!!!!\n\n YOU WIN AT LIFE",
     options: [],
     isAudio: true,
     audioType: "leia"
@@ -424,6 +426,7 @@ const audioMap = {
   bear: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/bear-audio.mp3",
   bite: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cartoonBite-audio.mp3",
   cow: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cowMoo-audio.mp3",
+  darth: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/darthvader-audio.mp3",
   door: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/door-creaking-audio.mp3",
   dragFire: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/dragonFire-audio.mp3",
   dragRoar: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/dragonRoar-audio.mp3",
@@ -516,7 +519,7 @@ function handleLoss(stateKey) {
 
 function addResetButton() {
   const resetBtn = document.createElement("button");
-  resetBtn.textContent = "RESET";
+  resetBtn.textContent = "START OVER";
   resetBtn.onclick = () => {
     
     const imageContainer = document.getElementById("game-image");
