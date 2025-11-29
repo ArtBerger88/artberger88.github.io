@@ -1,3 +1,4 @@
+// Game objects (Lines 2-435)
 const game = {
   start: {
     text: "Hello Adventurer!\nWelcome to 'The Lone Road'\n\nGOOD LUCK out there!!!\n\nAre you ready, YES or NO?",
@@ -434,8 +435,11 @@ const game = {
 };
 
 // DOM logic remains unchanged
+
 const questionEl = document.getElementById("question");
 const buttonsEl = document.getElementById("buttons");
+
+//Audio files array
 const audioMap = {
   ankle: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ankleBreak-audio.mp3",
   bear: "https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/bear-audio.mp3",
@@ -466,6 +470,7 @@ const audioMap = {
 };
 let currentState = "start";
 
+//Render state 
 function render(stateKey) {
   const state = game[stateKey];
   currentState = stateKey;
@@ -499,6 +504,7 @@ if (state.isLoss === true) {
   }
 }
 
+//Play audio
 function playAudio(audioType) {
   const audioSrc = audioMap[audioType];
   if (!audioSrc) {
@@ -514,6 +520,7 @@ function playAudio(audioType) {
   }, 4500);
 }
 
+//When player dies
 function handleLoss(stateKey) {
   const state = game[stateKey];
 
@@ -532,6 +539,7 @@ function handleLoss(stateKey) {
   },1000); 
 }
 
+//Reset button
 function addResetButton() {
   const resetBtn = document.createElement("button");
   resetBtn.textContent = "START OVER";
@@ -551,6 +559,7 @@ function addResetButton() {
   buttonsEl.appendChild(resetBtn);
 }
 
+//Secret hatch easter egg
 document.addEventListener("DOMContentLoaded", () => {
   const secretZone = document.getElementById("secret-zone");
   const hatchAudio = document.getElementById('hatchAudio');
