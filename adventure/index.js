@@ -573,22 +573,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 render(currentState);
-/*
-// handle win function
-function handleWin(stateKey) {
-  const state = game[stateKey];
-  console.log("handleWin triggered with:", stateKey);
-  questionEl.textContent = state.text;
-  
-  if (state.winType === "treasure") {
-    const treasure2Audio = new Audio("https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/treasure-audio.mp3");
-    console.error("Audio playing");
-    treasure2Audio.play();
-    
-    setTimeout(() => {
-  treasure2Audio.pause();
-  treasure2Audio.currentTime = 0; 
-}, 1000);
-  }
-}
-*/

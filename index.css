@@ -6,6 +6,10 @@ body {
   text-shadow: 2px 2px 5px #ffffff;
 }
 
+h1, h2, #services, #about-me-text, #photo-text, #reviewSectionTitle, #contactUs-FormTitle, #contact-section {
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 65px;
   font-family: 'Times New Roman', Times, serif;
@@ -68,7 +72,7 @@ h2 {
 
 .navbar {
   width: 100%;
-  background-color:#000000;
+  background-color:#0f0f0f;
   position: fixed;
   top: 0;
   font-size: 20px;
@@ -90,7 +94,8 @@ h2 {
 
 #services, #paymentHead {
   font-size: 50px;
-  border-bottom:  2px solid #00ff00;
+  border-bottom: 2px solid #00ff00;
+  margin-bottom: 50px;
   text-shadow: 2px 2px 5px #ffffff;
 }
 
