@@ -6,6 +6,25 @@ body {
     text-shadow: 2px 2px 5px #ffffff;
 }
 
+.navbar {
+  width: 100%;
+  background-color:#0f0f0f;
+  position: fixed;
+  top: 0;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.nav-link {
+  color:#00FF00;
+  padding-right:10px;
+}
+
+#logo {
+  width: 23px;
+  height: 20px;
+}
+
 @keyframes colorChange {
   0% { color: #FF0000; }
   25% { color: #00FF00; }
