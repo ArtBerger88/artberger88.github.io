@@ -80,6 +80,12 @@ body {
   transform: scale(2);
 }
 
+/* for on click enlarge
+.enlarged, zoom.enlarged:hover {
+  transform: scale(4);
+}
+*/
+
 #photo-disclaimer {
   font-size:10px;
   padding-top: 50px;
