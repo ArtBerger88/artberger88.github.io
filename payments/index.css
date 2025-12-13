@@ -40,12 +40,13 @@ body {
 
 .payTextHead {
   font-size: 30px;
-  padding-top: 25px;
-  padding-bottom: 15px;
+  padding-top: 35px;
+  padding-bottom: 25px;
 }
 
 .payBtn {
   font-size: 15px;
+  margin-bottom: 15px;
   color:#000000;
   border-color:#00FF00;
   background-color: #91ffa7;
@@ -59,14 +60,16 @@ body {
 }
 
 .zelleQR {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 60px;
 }
 
 #imporMsg {
   font-size:25px;
   font-weight: bold;
   animation: colorChange 3s infinite;
+  padding-top: 15px;
 }
 
 .zelleQR:hover, .QR:hover {
