@@ -4,6 +4,7 @@ body {
   border: 1px solid rgb(0, 240, 0);
   text-align: center;
   text-shadow: 2px 2px 5px #ffffff;
+  height: 100%
 }
 
 #about-me, #mission {
