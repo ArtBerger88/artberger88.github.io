@@ -1,9 +1,9 @@
 body {
-    background-color: #000000;
-    color: #00FF00;
-    border: 1px solid rgb(0, 240, 0);
-    text-align: center;
-    text-shadow: 2px 2px 5px #ffffff;
+  background-color: #000000;
+  color: #00FF00;
+  border: 1px solid rgb(0, 240, 0);
+  text-align: center;
+  text-shadow: 2px 2px 5px #ffffff;
 }
 
 .navbar {
