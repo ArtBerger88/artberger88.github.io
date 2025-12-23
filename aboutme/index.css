@@ -5,11 +5,18 @@ html, body {
 body {
   background-color: #000000;
   color: #00ff00;
-  border: 1px solid rgb(0, 240, 0);
   text-align: center;
   text-shadow: 2px 2px 5px #ffffff;
   display: flex;
   flex-direction: column;
+}
+
+#bodyHeader {
+  font-size: 50px;
+  margin-top: 50px;
+  text-decoration: underline;
+  padding-top:25px;
+  margin-bottom: 65px;
 }
 
 #about-me, #mission {
