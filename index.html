@@ -99,10 +99,25 @@
         Name:<br>
                 <input class="form-input" type="text" size="19" name="Contact-Name" placeholder="Your Name" required><br><br>
         Email:<br>
-                <input class="form-input" type="email" name="Contact-Email" placeholder="Your E-mail" required><br><br> 
+                <input class="form-input" type="email" name="Contact-Email" placeholder="Your E-mail" required><br><br>
+        <!-- Commented out for now
+         
+        Phone:<br>
+            <input type="tel" class="form-input" id="phone" name="phone" placeholder="352-555-1234" required><br><br>   
+        What are you looking for?<br>
+            <select class="form-input" id="serviceType" name="serviceType"> 
+                <option value="">Select an option</option> 
+                <option value="recurring">Recurring lawn care</option> 
+                <option value="cleanup">One-time cleanup</option> 
+                <option value="landscaping">Landscaping / beds / hedges</option> 
+                <option value="enhancements">Pathways / stonework / enhancements</option> 
+                <option value="other">Something else</option> 
+            </select> 
+        <br><br>
+         
+        -->
         Message:<br> 
-                <textarea id="form-input-area" name="Contact-Message" rows="6" cols="20" placeholder="Your Message" required>
-                </textarea>
+                <textarea id="form-input-area" name="Contact-Message" rows="6" cols="20" placeholder="Your Message"></textarea>
                 <p id="message-error"></p><br>
             <button id="submitButton" type="submit" value="Submit"><strong>Send</strong></button>
             </form>
