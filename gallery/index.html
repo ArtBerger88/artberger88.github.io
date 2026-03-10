@@ -1,177 +1,502 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" rel="stylesheet"/>
-    <link rel="shortcut icon" href="20240925_152248.ico" type="image/x-icon" >
-    <title>ArtofLawnCareLLC</title>
-    <nav class="navbar"> <!--NavBar for section quicklink-->
-        <img id="logo" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240925_152248.jpg">
-        <a class="nav-link" href="/index.html#companyName">Welcome</a> 
-        <a class="nav-link" href="https://artoflawncare.com/aboutme" target="_blank" rel="noopener noreferrer">About Me</a> 
-        <a class="nav-link" href="/index.html#services">Services</a>
-        <a class="nav-link" href="https://artoflawncare.com/payments" target="_blank" rel="noopener noreferrer">Payments</a>
-        <a class="nav-link" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">Gallery</a>
-        <a class="nav-link" href="/index.html#review">Review</a>
-        <a class="nav-link" href="/index.html#contacts">Contact-Us</a>
-    </nav>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery | The Art of Lawn Care LLC</title>
+    <meta name="description" content="Photo gallery showcasing our work" />
+    <link rel="shortcut icon" href="../20240925_152248.ico" type="image/x-icon" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --brand-green: #39ff14;
+            --brand-green-soft: #b4ff7a;
+            --ink-dark: #102014;
+        }
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 15% 5%, rgba(57, 255, 20, 0.10), transparent 35%),
+                linear-gradient(180deg, #eef4ee 0%, #f6faf6 55%, #f9fcf9 100%);
+            color:#111;
+        }
+        h1,h2,h3,h4 { font-family: "Lora", serif; }
+        .navbar-brand span{font-weight:700;letter-spacing:.03em;}
+        .btn-brand{background:var(--brand-green);color:#000;border:none;font-weight:600;} 
+        .btn-brand:hover{background:var(--brand-green-soft);}
+        .hero{
+            background:
+                radial-gradient(circle at 18% 20%, rgba(57, 255, 20, 0.24), rgba(57, 255, 20, 0.03) 40%, transparent 65%),
+                linear-gradient(120deg, #041007 0%, #08190d 55%, #11271b 100%);
+            color:#fff;
+            padding:6.25rem 0 5rem;
+            text-align:center;
+        }
+        .gallery-section h2{
+            color:var(--ink-dark);
+            font-weight:700;
+            margin-bottom:1rem;
+            padding-left:.85rem;
+            border-left:4px solid rgba(57, 255, 20, 0.75);
+            letter-spacing:.01em;
+        }
+        .gallery-section h3{
+            color:#1b2f1e;
+            font-weight:700;
+        }
+        .gallery-img{
+            width:100%;
+            height:100%;
+            aspect-ratio: 4 / 3;
+            object-fit:cover;
+            object-position:center;
+            display:block;
+            border-radius:.6rem;
+            cursor:pointer;
+            transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+            border:1px solid rgba(0,0,0,.08);
+            box-shadow:0 10px 20px rgba(6, 19, 9, 0.10);
+            background:#fff;
+        }
+        .gallery-img:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 16px 28px rgba(6, 19, 9, 0.18);filter:saturate(1.05);}
+        .gallery-img:focus-visible{outline:3px solid rgba(57,255,20,.45);outline-offset:2px;}
+        .image-preview-modal .modal-dialog{
+            max-width:min(96vw, 1200px);
+            margin:1rem auto;
+        }
+        .image-preview-modal .modal-content{
+            background:transparent;
+            border:0;
+            min-height:calc(100vh - 2rem);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .image-preview-modal .modal-body{
+            padding:2.5rem .35rem 1rem;
+            width:100%;
+            text-align:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .image-preview-modal img{
+            width:auto;
+            max-width:100%;
+            height:auto;
+            max-height:calc(100vh - 6rem);
+            object-fit:contain;
+            border-radius:.75rem;
+            box-shadow:0 20px 40px rgba(0,0,0,.45);
+            cursor:zoom-out;
+        }
+        .image-preview-modal .btn-close{
+            position:absolute;
+            top:1rem;
+            right:1rem;
+            z-index:2;
+            background-color:rgba(255,255,255,.9);
+            border-radius:999px;
+            padding:.6rem;
+        }
+        .before-after-block{background:linear-gradient(180deg, #ffffff 0%, #f7fbf7 100%);border:1px solid rgba(16,32,20,.10);border-radius:.95rem;padding:1rem;box-shadow:0 10px 24px rgba(6,19,9,.06);}
+        .before-after-block + .before-after-block{margin-top:1rem;}
+        .ba-pair + .ba-pair{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(16,32,20,.12);}
+        .before-stack img,.after-stack img{margin-bottom:.65rem;}
+        .before-stack img:last-child,.after-stack img:last-child{margin-bottom:0;}
+        .ba-divider{display:flex;align-items:center;justify-content:center;min-height:100%;}
+        .ba-pill{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:.4rem;
+            white-space:nowrap;
+            background:#0a1a0e;
+            color:#fff;
+            font-weight:700;
+            letter-spacing:.02em;
+            border-radius:999px;
+            padding:.4rem .75rem;
+            font-size:.78rem;
+            box-shadow:0 0 0 2px rgba(57,255,20,.28), 0 6px 14px rgba(0,0,0,.22);
+        }
+        @media (max-width: 767px){
+            .ba-divider{padding:.4rem 0;}
+            .ba-pill{font-size:.72rem;}
+            .hero{padding:5.75rem 0 4.5rem;}
+        }
+        .footer{background:#020503;color:#adb5bd;padding:2.5rem 0 1.5rem;font-size:.9rem;}
+        .footer a{color:#ced4da;text-decoration:none;} 
+        .footer a:hover{color:var(--brand-green);}
+    </style>
 </head>
-<body>
-    <div id="title">Photo Gallery:</div>
-        <section class="imgContainer" id="images">
-                <p class="projectImgTitle">Mowing</p> <!--Sections for different project type images-->
-            <section class="projectImg" id="Mowing"> 
-                <img class="zoom" id="img1" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20160415_101345.jpg" alt="3-teir lines">
-                <img class="zoom" id="img2" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230803_092935.jpg" alt="Staircase lines">
-                <img class="zoom" id="img36" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/FloridaLines.jpg" alt="FloridaLines">
-                <img class="zoom" id="img3" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/IMG_20150707_112921.jpg" alt="Backyard photo">
-                <img class="zoom" id="img4" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20190411_151203.jpg" alt="Memorial">
-                <img class="zoom" id="img5" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20171116_092142.jpg" alt="Diamond pattern lines">
-                <img class="zoom" id="img6" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20160317_114543.jpg" alt="Straight cut">
-            </section>
-                <p class="projectImgTitle">Landscape, Rock and Edging</p> 
-            <section class="projectImg" id="Landscape"> 
-                <img class="zoom" id="img8" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230310_125057.jpg" alt="Sego and border">
-                <img class="zoom" id="img9" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230309_174907.jpg" alt="Rock beds">
-                <img class="zoom" id="img12" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20241016_113350.jpg" alt="Block bed-edge">
-                <img class="zoom" id="imgA1" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter1.jpg" alt="Palms">
-            </section>
-                <p class="projectImgTitle">Mulching</p>
-            <section class="projectImg" id="Mulch">     
-                <img class="zoom" id="img30" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing8.jpg" alt="Rushing8">
-                <img class="zoom" id="img31" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing9.jpg" alt="Rushing9">
-                <img class="zoom" id="img32" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing10.jpg" alt="Rushing10">
-                <img class="zoom" id="img33" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing11.jpg" alt="Rushing11">
-                <img class="fadeImg" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2After.jpg" alt="Highland2After">
-                    <br>
-                <img class="zoom" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav3.jpg" alt="cav3">
-                <img class="zoom" id="imgA18" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav4.jpg" alt="cav4">                
-                <img class="zoom" id="imgA19" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav5.jpg" alt="cav5">
-                <img class="zoom" id="imgA20" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav6.jpg" alt="cav6">
-                <img class="zoom" id="imgA21" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav7.jpg" alt="cav7">
-                <img class="zoom" id="imgA22" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav8.jpg" alt="cav8">
-                <img class="zoom" id="imgA23" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav9.jpg" alt="cav9">
-                    <br>
-                <img class="zoom" id="imgA24" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/red1.jpg" alt="red1">
-                <img class="zoom" id="imgA25" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/red2.jpg" alt="red2">
-                <img class="zoom" id="imgA26" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/red3.jpg" alt="red3">                
-            </section>
-                <p class="projectImgTitle">Bush Trimming</p>
-            <section class="projectImg" id="Bushes">     
-                <img class="zoom" id="img35" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/BigBush.jpg" alt="BigBush">
-                <img class="zoom" id="img22" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250421_112431 1.jpg" alt="Umbrella Tree">
-                <img class="fadeImg" id="img38" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush2.jpg" alt="LongBush2">
-            </section>
-                <p class="projectImgTitle">Patios, Path, and Turf</p>
-            <section class="projectImg" id="Patios_Turf">    
-                <img class="zoom" id="img34" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/KingPatio.jpg" alt="Patio">
-                <img class="zoom" id="img10" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240913_110518.jpg" alt="Patio">
-                <img class="zoom" id="img11" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240115_142306.jpg" alt="Pathway">
-                <img class="zoom" id="img47" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Turf1.jpg" alt="Turf1">
-                <img class="zoom" id="img48" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Turf2.jpg" alt="Turf2">
-            </section>
-                <p id="beforeNAfter">Project<br>Before And After:</p>
-                <div class="fadeImgContainer">
-                    <p class="projectImgTitle">Bushes Galore</p>
-                    <img class="fadeImg" id="img13" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122603_76465ffd.jpg" alt="Horseshoe">
-                    <div class="arrow"></div>
-                    <img class="fadeImg2" id="img14" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174828_dd50498a.jpg" alt="Horseshoe-After">
-                        <br>
-                    <img class="fadeImg" id="img15" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122547_54f9d4db.jpg" alt="Bush-1">
-                    <div class="arrow"></div>
-                    <img class="fadeImg2" id="img16" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174851_eb30b8b5.jpg" alt="Bush-1-After">
-                        <br>
-                    <img class="fadeImg" id="img17" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122331_3a673881.jpg" alt="Back-hedge-row">
-                    <div class="arrow"></div>
-                    <img class="fadeImg2" id="img18" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174912_2cf13761.jpg" alt="Corner-After">
-                    <img class="fadeImg2" id="img19" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174931_c7d04939%201.jpg" alt="Back-hedge-After">    
-                        <br>
-                    <img class="fadeImg" id="img20" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122853_d618ceb0.jpg" alt="Side-hedge">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img21" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174953_1baa0a66.jpg" alt="Side-hedge-After">
-                        <br>
-                    <img class="fadeImg" id="img23" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250409_101832.jpg" alt="Gigantic-bush-before">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img24" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250421_135558 1.jpg" alt="Gigantic-bush-after">
-                        <br>
-                    
-                    <img class="fadeImg" id="img37" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush.jpg" alt="LongBush">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img38" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush2.jpg" alt="LongBush2">
-                        <br>
-                    <img class="fadeImg" id="img39" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Holly1.jpg" alt="Holly1">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img40" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Holly2.jpg" alt="Holly2">
-                        <br>
-                    <img class="fadeImg" id="img41" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Bush1.jpg" alt="Bush1">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img42" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Bush2.jpg" alt="Bush2">
-                        <br><p class="projectImgTitle">Property Makeover Projects</p>
-                    <img class="fadeImg" id="img29" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing1.jpg" alt="Rushing1-before">
-                    <img class="fadeImg" id="img25" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing2.jpg" alt="Rushing2-before">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img26" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing8.jpg" alt="Rushing8-after">
-                        <br>
-                    <img class="fadeImg" id="img27" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing5.jpg" alt="Rushing5-before">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img28" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing6.jpg" alt="Rushing6-after">
-                        <br>
-                    <img class="fadeImg" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland1Before.jpg" alt="Highland1">
-                    <img class="fadeImg" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2Before.jpg" alt="Highland2">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img44" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland1After.jpg" alt="Highland1After">
-                    <img class="fadeImg" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2After.jpg" alt="Highland2After">
-                        <br>
-                    <img class="fadeImg" id="img45" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland3Before.jpg" alt="Highland3">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="img46" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland3After.jpg" alt="Highland3After">
-                        <br>
-                    <img class="fadeImg" id="imgA2" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore1.jpg" alt="PacificBefore1">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA3" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter1.jpg" alt="PacificAfter1">
-                        <br>
-                    <img class="fadeImg" id="imgA4" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore2.jpg" alt="PacificBefore2">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA5" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter2.jpg" alt="PacificAfter2">
-                        <br>
-                    <img class="fadeImg" id="imgA6" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore3.jpg" alt="PacificBefore3">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA7" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter3.jpg" alt="PacificAfter3">
-                        <br>
-                    <img class="fadeImg" id="imgA8" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore4.jpg" alt="PacificBefore4">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA9" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter4.jpg" alt="PacificAfter4">
-                        <br>
-                    <img class="fadeImg" id="imgA10" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore5.jpg" alt="PacificBefore5">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA11" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter5.jpg" alt="PacificAfter5">
-                        <br>
-                    <img class="fadeImg" id="imgA12" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore6.jpg" alt="PacificBefore6">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA13" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter6.jpg" alt="PacificAfter6">
-                        <br>
-                    <img class="fadeImg" id="imgA14" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore7.jpg" alt="PacificBefore7">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA15" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter7.jpg" alt="PacificAfter7">
-                        <br>
-                    <img class="fadeImg" id="imgA16" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore8.jpg" alt="PacificBefore8">
-                    <div class="arrow"></div>
-                    <img class="fadeImg" id="imgA17" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter8.jpg" alt="PacificAfter8">
+<body id="top">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success border-opacity-25">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                <span class="rounded-circle bg-success-subtle d-inline-flex align-items-center justify-content-center" style="width:32px;height:32px;">
+                    <img src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240925_152248.jpg" alt="The Art of Lawn Care logo" style="width:24px;height:24px;object-fit:cover;border-radius:50%;" />
+                </span>
+                <span>The Art of Lawn Care</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#areas">Service Area</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Photo Gallery</h1>
+            <p class="lead mb-4">A showcase of our recent work</p>
+        </div>
+    </header>
+
+    <!-- content -->
+    <section class="py-5 gallery-section">
+        <div class="container">
+            <!-- each category -->
+            <h2 class="h4 mt-4">Mowing</h2>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20160415_101345.jpg" alt="3-tier lines"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230803_092935.jpg" alt="Staircase lines"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/FloridaLines.jpg" alt="FloridaLines"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/IMG_20150707_112921.jpg" alt="Backyard photo"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20190411_151203.jpg" alt="Memorial"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20171116_092142.jpg" alt="Diamond pattern lines"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20160317_114543.jpg" alt="Straight cut"></div>
+            </div>
+
+            <h2 class="h4 mt-5">Landscape, Rock and Edging</h2>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230310_125057.jpg" alt="Sego and border"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230309_174907.jpg" alt="Rock beds"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20241016_113350.jpg" alt="Block bed-edge"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter1.jpg" alt="Palms"></div>
+            </div>
+
+            <h2 class="h4 mt-5">Mulching</h2>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing8.jpg" alt="Rushing8"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing9.jpg" alt="Rushing9"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing10.jpg" alt="Rushing10"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing11.jpg" alt="Rushing11"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2After.jpg" alt="Highland2After"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav3.jpg" alt="cav3"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav4.jpg" alt="cav4"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav5.jpg" alt="cav5"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav6.jpg" alt="cav6"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav7.jpg" alt="cav7"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav8.jpg" alt="cav8"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/cav9.jpg" alt="cav9"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/red1.jpg" alt="red1"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/red2.jpg" alt="red2"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/red3.jpg" alt="red3"></div>
+            </div>
+            
+            <h2 class="h4 mt-5">Bush Trimming</h2>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/BigBush.jpg" alt="BigBush"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250421_112431 1.jpg" alt="Umbrella Tree"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush2.jpg" alt="LongBush2"></div>
+            </div>
+
+            <h2 class="h4 mt-5">Patios, Path, and Turf</h2>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/KingPatio.jpg" alt="Patio"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240913_110518.jpg" alt="Patio"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240115_142306.jpg" alt="Pathway"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Turf1.jpg" alt="Turf1"></div>
+                <div class="col-sm-6 col-md-4"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Turf2.jpg" alt="Turf2"></div>
+            </div>
+
+            <h2 class="h4 mt-5">Before & After Projects</h2>
+            <h3 class="h5 mt-3">Bushes Galore</h3>
+            <div class="before-after-block">
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122603_76465ffd.jpg" alt="Horseshoe">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174828_dd50498a.jpg" alt="Horseshoe-After">
+                    </div>
                 </div>
-        </section>
-        <!-- Script for img enlarge on click
-<script>
-  // Add click listener to all gallery images
-  document.querySelectorAll('.fadeImg, .fadeImg2, .zoom').forEach(img => {
-    img.addEventListener('click', () => {
-      img.classList.toggle('enlarged'); // toggles the "enlarged" class
-    });
-  });
-</script>
--->
+
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122547_54f9d4db.jpg" alt="Bush-1">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174851_eb30b8b5.jpg" alt="Bush-1-After">
+                    </div>
+                </div>
+
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122331_3a673881.jpg" alt="Back-hedge-row">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174912_2cf13761.jpg" alt="Corner-After">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174931_c7d04939%201.jpg" alt="Back-hedge-After">
+                    </div>
+                </div>
+
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_122853_d618ceb0.jpg" alt="Side-hedge">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250108_174953_1baa0a66.jpg" alt="Side-hedge-After">
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-block">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250409_101832.jpg" alt="Gigantic-bush-before">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20250421_135558 1.jpg" alt="Gigantic-bush-after">
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-block">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush.jpg" alt="LongBush">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush2.jpg" alt="LongBush2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-block">
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Holly1.jpg" alt="Holly1">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Holly2.jpg" alt="Holly2">
+                    </div>
+                </div>
+
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Bush1.jpg" alt="Bush1">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Bush2.jpg" alt="Bush2">
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="h5 mt-4">Property Makeover Projects</h3>
+            <div class="before-after-block">
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing1.jpg" alt="Rushing1-before">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing2.jpg" alt="Rushing2-before">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing8.jpg" alt="Rushing8-after">
+                    </div>
+                </div>
+
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing5.jpg" alt="Rushing5-before">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing6.jpg" alt="Rushing6-after">
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-block">
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland1Before.jpg" alt="Highland1">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2Before.jpg" alt="Highland2">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland1After.jpg" alt="Highland1After">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2After.jpg" alt="Highland2After">
+                    </div>
+                </div>
+
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland3Before.jpg" alt="Highland3">
+                    </div>
+                    <div class="col-md-2 ba-divider">
+                        <span class="ba-pill">Before -> After</span>
+                    </div>
+                    <div class="col-md-5 after-stack">
+                        <img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland3After.jpg" alt="Highland3After">
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-block">
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore1.jpg" alt="PacificBefore1"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter1.jpg" alt="PacificAfter1"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore2.jpg" alt="PacificBefore2"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter2.jpg" alt="PacificAfter2"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore3.jpg" alt="PacificBefore3"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter3.jpg" alt="PacificAfter3"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore4.jpg" alt="PacificBefore4"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter4.jpg" alt="PacificAfter4"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore5.jpg" alt="PacificBefore5"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter5.jpg" alt="PacificAfter5"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore6.jpg" alt="PacificBefore6"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter6.jpg" alt="PacificAfter6"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore7.jpg" alt="PacificBefore7"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter7.jpg" alt="PacificAfter7"></div>
+                </div>
+                <div class="ba-pair row g-3 align-items-center">
+                    <div class="col-md-5 before-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificBefore8.jpg" alt="PacificBefore8"></div>
+                    <div class="col-md-2 ba-divider"><span class="ba-pill">Before -> After</span></div>
+                    <div class="col-md-5 after-stack"><img class="gallery-img" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/PacificAfter8.jpg" alt="PacificAfter8"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade image-preview-modal" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close preview"></button>
+                <div class="modal-body">
+                    <img id="previewImage" src="" alt="Expanded project photo preview" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer mt-4">
+        <div class="container">
+            <div class="row gy-3 align-items-center">
+                <div class="col-md-6">
+                    <div class="small">© 2025 The Art of Lawn Care LLC. All rights reserved.</div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="small">
+                        <a href="#top">Back to top</a> <span class="mx-2"></span>
+                        <a href="../index.html#services">Services</a> <span class="mx-2"></span>
+                        <a href="../index.html#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var previewModalElement = document.getElementById("imagePreviewModal");
+            var previewImage = document.getElementById("previewImage");
+            var previewModal = new bootstrap.Modal(previewModalElement);
+
+            document.querySelectorAll(".gallery-img").forEach(function (image) {
+                image.setAttribute("tabindex", "0");
+                image.setAttribute("role", "button");
+
+                var openPreview = function () {
+                    previewImage.src = image.src;
+                    previewImage.alt = image.alt || "Expanded project photo preview";
+                    previewModal.show();
+                };
+
+                image.addEventListener("click", openPreview);
+                image.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        openPreview();
+                    }
+                });
+            });
+
+            previewImage.addEventListener("click", function () {
+                previewModal.hide();
+            });
+
+            previewModalElement.addEventListener("hidden.bs.modal", function () {
+                previewImage.src = "";
+            });
+        });
+    </script>
 </body>
-<footer>
-    &copy; 2025 The Art of Lawn Care LLC
-</footer>
 </html>
