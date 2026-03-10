@@ -1,46 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" rel="stylesheet"/>
-    <link rel="shortcut icon" href="20240925_152248.ico" type="image/x-icon" >
-    <title>ArtofLawnCareLLC</title>
-    <nav class="navbar"> <!--NavBar for section quicklink-->
-        <img id="logo" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240925_152248.jpg">
-        <a class="nav-link" href="/index.html#companyName">Welcome</a> 
-        <a class="nav-link" href="https://artoflawncare.com/aboutme" target="_blank" rel="noopener noreferrer">About Me</a> 
-        <a class="nav-link" href="/index.html#services">Services</a>
-        <a class="nav-link" href="https://artoflawncare.com/payments" target="_blank" rel="noopener noreferrer">Payments</a>
-        <a class="nav-link" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">Gallery</a>
-        <a class="nav-link" href="/index.html#review">Review</a>
-        <a class="nav-link" href="/index.html#contacts">Contact-Us</a>
-    </nav>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Art of Lawn Care LLC | Payments</title>
+    <meta name="description" content="Secure payment options for The Art of Lawn Care LLC" />
+    <link rel="shortcut icon" href="../20240925_152248.ico" type="image/x-icon" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --brand-green: #39ff14;
+            --brand-green-soft: #b4ff7a;
+            --hero-dark: #061008;
+        }
+        body { font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(180deg, #f1f6f1 0%, #f7faf7 100%); color:#111; }
+        h1,h2,h3,h4 { font-family: "Lora", serif; }
+        .hero {
+            background: radial-gradient(circle at 15% 20%, rgba(57, 255, 20, 0.22) 0%, rgba(57, 255, 20, 0.04) 40%, transparent 65%),
+                        linear-gradient(120deg, #050d06 0%, #0c1d10 55%, #122717 100%);
+            color:#fff;
+            padding:6rem 0 5rem;
+            text-align:center;
+        }
+        .payment-section { padding: 3.5rem 0; }
+        .payment-card {
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 1rem;
+            box-shadow: 0 12px 28px rgba(6, 16, 8, 0.08);
+        }
+        .btn-brand {
+            background:var(--brand-green);
+            color:#000;
+            border:none;
+            font-weight:600;
+            transition: transform 0.18s ease, background-color 0.18s ease;
+        }
+        .btn-brand:hover { background:var(--brand-green-soft); transform: translateY(-1px); }
+        .btn-brand:focus-visible { outline: 3px solid rgba(57, 255, 20, 0.4); outline-offset: 2px; }
+        .footer { background:#020503; color:#adb5bd; padding:2.5rem 0 1.5rem; font-size:.9rem; }
+        .footer a { color:#ced4da; text-decoration:none; }
+        .footer a:hover { color:var(--brand-green); }
+        .zelleQR { width: 100%; max-width: 240px; height:auto; border-radius: .5rem; }
+    </style>
 </head>
 <body>
-    <section id="payments"> <!--Section for payment options-->
-        <p id="paymentHead">Payments:</p>
-            <p class="payTextHead">Pay Via Paypal:</p>
-                <a class="paylink" href="https://www.paypal.com/paypalme/artberger265" target="_blank">
-                    <button class="payBtn">
-                        Take me to <strong>PayPal</strong>
-                    </button>
-                </a>
-            <p class="payTextHead">Pay Via Yardbook:</p>
-                <a class="paylink" href="https://www.yardbook.com/244139/pay_now" target="_blank">
-                    <button class="payBtn">
-                        Take me to <strong>Yardbook</strong>
-                    </button>
-                </a>
-            <p id="imporMsg"><strong>IMPORTANT:</strong><br>Have your invoice number handy when <br>visiting Yardbook pay link.</p>
-            <p class="payTextHead">Pay Via Zelle QR code:</p><br>
-                <a class="qrBtn" href="https://zellepay.com/qr-codes/?data=s/?data=eyJhY3Rpb24iOiJwYXltZW50liwibmFtZSl6IlRlRSBBUlQgT0YgTEFXTiBDQVJFlExMQylsInFyQ29kZU5hbWUiOiJUSEUgQVJUlE9GIExBV04gQ0FSRSBMTEMiLCJ0b2tlbiI6ImFydHl6aWxsYUBnbWFpbC5jb2oifQ==" target="_blank">
-                    <img class="zelleQR" id="zelleQR" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ZelleAolcQR-edit1.jpg" alt="zelleQR">
-                </a>
-            <p id="paymentQs">Any questions or inquiries about payments please contact the business @<br> <a class="tele" href="tel:352-419-1307">352-419-1307</a><br> Or by email @<a class="email" href="mailto:artoflawncarellc@gmail.com">artoflawncarellc@gmail.com"</a></p>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success border-opacity-25">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                <span class="rounded-circle bg-success-subtle d-inline-flex align-items-center justify-content-center" style="width:32px;height:32px;">
+                    <img src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240925_152248.jpg" alt="The Art of Lawn Care logo" style="width:24px;height:24px;object-fit:cover;border-radius:50%;" />
+                </span>
+                <span>The Art of Lawn Care</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#areas">Service Area</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Payments</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Payments</h1>
+            <p class="lead mb-4">Choose a secure method to complete your transaction.</p>
+        </div>
+    </header>
+
+    <!-- payment options -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card payment-card p-4">
+                        <h2 class="h4 fw-bold mb-3">How would you like to pay?</h2>
+                        <div class="mb-4">
+                            <p class="mb-1">Pay via <strong>PayPal</strong>:</p>
+                            <a href="https://www.paypal.com/paypalme/artberger265" target="_blank" rel="noopener noreferrer" class="btn btn-brand">Go to PayPal</a>
+                        </div>
+                        <div class="mb-4">
+                            <p class="mb-1">Pay via <strong>Yardbook</strong>:</p>
+                            <a href="https://www.yardbook.com/244139/pay_now" target="_blank" rel="noopener noreferrer" class="btn btn-brand">Go to Yardbook</a>
+                            <p class="small mt-2"><strong>IMPORTANT:</strong> Have your invoice number handy when visiting the Yardbook link.</p>
+                        </div>
+                        <div class="mb-4 text-center">
+                            <p class="mb-2">Pay via <strong>Zelle</strong> (scan QR):</p>
+                            <a href="https://zellepay.com/qr-codes/?data=s/?data=eyJhY3Rpb24iOiJwYXltZW50liwibmFtZSl6IlRlRSBBUlQgT0YgTEFXTiBDQVJFlExMQylsInFyQ29kZU5hbWUiOiJUSEUgQVJUlE9GIExBV04gQ0FSRSBMTEMiLCJ0b2tlbiI6ImFydHl6aWxsYUBnbWFpbC5jb2oifQ==" target="_blank" rel="noopener noreferrer">
+                                <img src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ZelleAolcQR-edit1.jpg" alt="Zelle QR code" class="zelleQR" loading="lazy" decoding="async" />
+                            </a>
+                        </div>
+                        <p class="small text-center">Questions? Call <a href="tel:352-419-1307">352-419-1307</a> or email <a href="mailto:artoflawncarellc@gmail.com">artoflawncarellc@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- footer -->
+    <footer class="footer mt-4">
+        <div class="container">
+            <div class="row gy-3 align-items-center">
+                <div class="col-md-6">
+                    <div class="small">© 2025 The Art of Lawn Care LLC. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer>
-    &copy; 2025 The Art of Lawn Care LLC
-  </footer>
 </html>
