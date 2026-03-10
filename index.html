@@ -1,133 +1,627 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ArtofLawnCareLLC</title>
-        <meta name="description" content="Residential, commercial, lawncare, maintenance, service, landscaping near me, mowing, mulching, bush trimming, leaf removal, debris clean up, pressure washing, patio, pathway, Inverness, Citrus County ">
-        <link href="index.css" rel="stylesheet"/>
-        <link rel="shortcut icon" href="20240925_152248.ico" type="image/x-icon" >
-        <nav class="navbar"> <!--NavBar for section and sub-directory quicklink-->
-            <img id="logo" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240925_152248.jpg">
-            <a class="nav-link" href="#companyName">Welcome</a> 
-            <a class="nav-link" href="https://artoflawncare.com/aboutme" target="_blank" rel="noopener noreferrer">About Me</a> 
-            <a class="nav-link" href="#services">Services</a>
-            <a class="nav-link" href="https://artoflawncare.com/payments" target="_blank" rel="noopener noreferrer">Payments</a>
-            <a class="nav-link" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">Gallery</a>
-            <a class="nav-link" href="Https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank" rel="noopener noreferrer">Review</a>
-            <a class="nav-link" href="#contacts">Contact-Us</a>
-        </nav>
-    </head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4150SN19VV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4150SN19VV');
-    </script>
-    <body>
-        <h1 class="headTxt" id="companyName"><strong>The Art Of Lawn Care</strong></h1>
-        <h2 class="headTxt" id="motto">Artistic Lawn Engineering</h2>
-        <section id="imgHead">   <!--Background photo--> 
-        </section>
-        <div id="welcomeMsg">Welcome to <strong>'The Art of Lawn Care'</strong><br>A fair-priced <strong>High Quality</strong> Lawn Management service.<br>From Artistic lawn cutting and Precise String trimming to Landscapes or Pathways.<br>If your job needs an Artistic touch we are the right company for you.
-        </div>
-        <section id="serviceArea">  <!--Service area with Map and named locations-->
-            <p>Who and where do I serve:</p>
-            <p id="serviceAreaText">Serving Citrus County, and surrounding areas:<br><span id="serviceCitys">Inverness, Lecanto, Beverly Hills, Citrus Springs, Floral City, Hernando, Crystal River, Dunnellon, Homosassa, and more....</span></p>
-                <img class="zoom" id="citrus-co" src="https://www.homosassaflorida.com/images/citruscountymap.jpg" alt="Florida map">
-            <p id="serviceAreaSubtext"><span class="fade-in-out">Accepting New Clients</span><br>See if we can service you!!!!!<br>Call or MSG TODAY!!!!!<br><br><a class="tele" href="tel:352-419-1307">352-419-1307</a></p>
-        </section>
-        <div id="services">Services:</div>  <!--Servive list and photos--> 
-            <div class="container">
-                <div class="row align-items-start"></div>
-                    <div class="col" id="col-1" ><img class="list-img" id="img11" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240115_142306.jpg" alt="Pathway"></div>
-                    <div class="col" id="col-2">
-                        <ul class="list">
-                            <li id="ServiceList">Artistic Lawn Cutting</li>
-                            <li id="ServiceList">Percise String Trimming / Edging</li>
-                            <li id="ServiceList">Landscape Bed Maintenance</li>
-                            <li id="ServiceList">Hedge Trimming</li>
-                            <li id="ServiceList">Leaf and debris Removal</li>
-                            <li id="ServiceList">Flower Plantings / Design</li>
-                            <li id="ServiceList">Pressure Washing</li>
-                            <li id="ServiceList">Pathways / Patios</li>
-                            <li id="ServiceList">Stonework</li>
-                            <li id="ServiceList">Fertilization (1/4 - 1 Ac)</li>
-                            <li id="ServiceList">And More....</li>
-                        </ul>   
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <title>The Art of Lawn Care LLC | Citrus County</title> 
+        <meta name="description" content="Residential and commercial lawn care in Inverness and Citrus County, FL: mowing, mulching, bush trimming, pressure washing, patios, pathways, and landscaping." /> 
+        <!-- Bootstrap 5 CSS --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" /> 
+        <!-- Google Fonts --> 
+        <link rel="preconnect" href="https://fonts.googleapis.com" /> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet" /> 
+        <style>
+            :root {
+                --brand-green: #39ff14; /* neon accent */
+                --dark-bg: #07130a;
+            }
+            body {
+                font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                background-color: #f5f7f5;
+                color: #111;
+            }
+            h1, h2, h3, h4 {
+                font-family: "Lora", "Times New Roman", serif;
+            }
+            .navbar-brand span {
+                font-weight: 700;
+                letter-spacing: 0.03em;
+            }
+            .navbar-logo {
+                width: 32px;
+                height: 32px;
+                border-radius: 999px;
+                object-fit: cover;
+                border: 1px solid rgba(255, 255, 255, 0.35);
+            }
+            .btn-brand {
+                background: var(--brand-green);
+                color: #000;
+                border: none;
+                font-weight: 600;
+                box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+            .btn-brand:hover {
+                background: #b4ff7a;
+                color: #000;
+            }
+            .hero {
+                background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.18), transparent 55%), radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.75), #020503);
+                color: #fff;
+                padding: 6rem 0 5rem;
+                position: relative;
+                overflow: hidden;
+            }
+            .hero-badge {
+                background: rgba(0, 0, 0, 0.6);
+                border-radius: 999px;
+                padding: 0.25rem 0.75rem;
+                font-size: 0.85rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+            .hero-badge-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 999px;
+                background: var(--brand-green);
+                box-shadow: 0 0 12px rgba(57, 255, 20, 0.9);
+            }
+            .hero-phone {
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            .hero-highlight {
+                color: var(--brand-green);
+            }
+            .hero-card {
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 1.25rem;
+                padding: 1.5rem;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(10px);
+            }
+            .section-label {
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #6c757d;
+            }
+            .service-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 999px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(57, 255, 20, 0.08);
+                color: #0f5132;
+                font-size: 1.2rem;
+            }
+            .card {
+                border-radius: 1rem;
+            }
+            .gallery-thumb {
+                border-radius: 0.75rem;
+                overflow: hidden;
+                position: relative;
+                background: #0b1a0f;
+                min-height: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #d1e7dd;
+                text-align: center;
+                padding: 1rem;
+            }
+            .gallery-thumb::after {
+                content: "Before / After Coming Soon";
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), transparent);
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+            .gallery-link {
+                display: block;
+                border-radius: 0.75rem;
+                overflow: hidden;
+            }
+            .gallery-image {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                transition: transform 0.25s ease;
+            }
+            .gallery-link:hover .gallery-image {
+                transform: scale(1.04);
+            }
+            .gallery-link:focus-visible {
+                outline: 3px solid rgba(57, 255, 20, 0.6);
+                outline-offset: 2px;
+            }
+            .lightbox-image {
+                width: 100%;
+                max-height: 80vh;
+                object-fit: contain;
+                border-radius: 0.5rem;
+                background: #000;
+            }
+            .review-stars {
+                color: #ffc107;
+                font-size: 0.95rem;
+            }
+            .contact-bg {
+                background: linear-gradient(135deg, #07130a, #020503);
+                color: #fff;
+                border-radius: 1.5rem;
+            }
+            .contact-bg .form-control, .contact-bg .form-select {
+                background: rgba(0, 0, 0, 0.35);
+                border-color: rgba(255, 255, 255, 0.15);
+                color: #fff;
+            }
+            .contact-bg .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+            }
+            .contact-bg .form-control:focus, .contact-bg .form-select:focus {
+                border-color: var(--brand-green);
+                box-shadow: 0 0 0 0.2rem rgba(57, 255, 20, 0.25);
+            }
+            .contact-bg a,
+            .contact-bg a:link,
+            .contact-bg a:visited,
+            .contact-bg a.link-light,
+            .contact-bg a.link-light:link,
+            .contact-bg a.link-light:visited {
+                color: #baf7d0 !important;
+            }
+            .contact-bg a:hover,
+            .contact-bg a:focus,
+            .contact-bg a.link-light:hover,
+            .contact-bg a.link-light:focus {
+                color: #d8ffe6 !important;
+            }
+            .contact-note {
+                color: #d9e9df;
+            }
+            .contact-link-tone,
+            .contact-link-tone:link,
+            .contact-link-tone:visited {
+                color: #baf7d0 !important;
+            }
+            .contact-link-tone:hover,
+            .contact-link-tone:focus {
+                color: #d8ffe6 !important;
+            }
+            .footer {
+                background: #020503;
+                color: #adb5bd;
+                padding: 2.5rem 0 1.5rem;
+                font-size: 0.9rem;
+            }
+            .footer a {
+                color: #ced4da;
+                text-decoration: none;
+            }
+            .footer a:hover {
+                color: var(--brand-green);
+            }
+            .footer-mint {
+                color: #baf7d0;
+            }
+            @media (max-width: 767.98px) {
+                .hero {
+                    padding-top: 5rem;
+                }
+            }
+        </style> 
+    </head> 
+    <body> 
+        <!-- NAVBAR --> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success border-opacity-25"> 
+            <div class="container"> 
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#companyName"> 
+                    <img class="navbar-logo" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240925_152248.jpg" alt="The Art of Lawn Care logo" />
+                    <span>The Art of Lawn Care</span> 
+                </a> 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"> 
+                    <span class="navbar-toggler-icon"></span> 
+                </button> 
+                <div class="collapse navbar-collapse" id="mainNav"> 
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#companyName">Welcome</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://artoflawncare.com/aboutme" target="_blank" rel="noopener noreferrer">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://artoflawncare.com/payments" target="_blank" rel="noopener noreferrer">Payments</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">Gallery</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Review</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacts">Contact-Us</a>
+                        </li> 
+                    </ul> 
+                    <a href="tel:13524191307" class="btn btn-sm btn-brand ms-lg-3 mt-2 mt-lg-0"> Call: 352-419-1307 </a> 
+                </div> 
+            </div> 
+        </nav> 
+        <!-- HERO --> 
+         <header id="top" class="hero"> 
+            <div class="container"> 
+                <div class="row align-items-center g-4"> 
+                    <div class="col-lg-7"> 
+                        <div class="hero-badge mb-3"> 
+                            <span class="hero-badge-dot"></span> 
+                            <span>Accepting New Clients in Citrus County</span> 
+                        </div> 
+                        <h1 id="companyName" class="display-4 fw-bold mb-3"> The Art of Lawn Care LLC: Expert Lawn Care based in 
+                            <span class="hero-highlight">Citrus County</span> 
+                        </h1> 
+                        <p class="lead mb-4"> A fair-priced, high quality lawn management service—from artistic lawn cutting and precise string trimming to landscaping, pathways, and more. If your job needs an artistic touch, we’re the right company for you. </p> 
+                        <div class="d-flex flex-wrap align-items-center gap-3 mb-3"> 
+                            <a href="#contact" class="btn btn-brand btn-lg"> Get a Free Estimate </a> 
+                            <a href="tel:13524191307" class="btn btn-outline-light btn-lg"> Call or Text: 352-419-1307 </a> 
+                        </div> 
+                        <div class="d-flex flex-wrap align-items-center gap-4"> 
+                            <div class="d-flex align-items-center gap-2"> 
+                                <span class="badge bg-success-subtle text-success-emphasis border border-success border-opacity-25"> Locally Owned </span> 
+                                <span class="badge bg-dark border border-light-subtle"> Mowing • Landscaping • Enhancements </span> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <div class="col-lg-5"> 
+                        <div class="hero-card"> 
+                            <h2 class="h5 mb-3">Who and where do we serve?</h2> 
+                            <p class="mb-2"> Proudly serving Citrus County and surrounding areas with reliable, detail-focused lawn care. </p> 
+                            <ul class="list-unstyled small mb-3"> 
+                                <li>• Inverness, Lecanto, Beverly Hills, Citrus Springs</li> 
+                                <li>• Floral City, Hernando, Crystal River</li> 
+                                <li>• Dunnellon, Homosassa, Brooksville and more…</li> 
+                            </ul> 
+                            <p class="hero-phone mb-3"> Call or text anytime: 
+                                <a href="tel:13524191307" class="link-light text-decoration-none">352-419-1307</a> 
+                            </p> 
+                            <p class="small mb-0"> Prefer email? Reach us at 
+                                <a href="mailto:artoflawncarellc@gmail.com" class="contact-link-tone">artoflawncarellc@gmail.com</a>
+                            </p> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </header> 
+        <!-- SERVICES --> 
+         <section id="services" class="py-5 py-md-6"> 
+            <div class="container"> 
+                <div class="row mb-4 align-items-end"> 
+                    <div class="col-md-8"> 
+                        <div class="section-label mb-2">Services</div> 
+                        <h2 class="h2 fw-bold">Artistic lawn engineering</h2> 
+                        <p class="text-muted mb-0"> We combine precision, knowledge, consistency, and an artistic approach to keep your property looking sharp. </p> 
+                    </div> 
+                </div> 
+                <div class="row g-4"> 
+                    <!-- Lawn Care --> 
+                    <div class="col-md-6 col-lg-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="service-icon mb-3">✂️</div> 
+                                <h3 class="h5">Lawn Care</h3> 
+                                <p class="text-muted small mb-3"> Clean, consistent cuts with crisp edges and attention to detail on every visit. </p> 
+                                <ul class="small mb-0"> 
+                                    <li>Artistic lawn cutting</li> 
+                                    <li>Precise string trimming / edging</li> 
+                                    <li>Leaf and debris removal</li> 
+                                </ul> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <!-- Landscaping --> 
+                     <div class="col-md-6 col-lg-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="service-icon mb-3">🌱</div> 
+                                <h3 class="h5">Landscaping & Beds</h3> 
+                                <p class="text-muted small mb-3"> Keep your beds and greenery looking intentional, not overgrown. </p> 
+                                <ul class="small mb-0"> 
+                                    <li>Landscape bed maintenance</li> 
+                                    <li>Hedge trimming</li> 
+                                    <li>Flower plantings & design</li> 
+                                </ul> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <!-- Enhancements --> 
+                     <div class="col-md-6 col-lg-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="service-icon mb-3">🧱</div> 
+                                <h3 class="h5">Enhancements & Hardscapes</h3> 
+                                <p class="text-muted small mb-3"> Add structure and polish to your outdoor space with durable, attractive features. </p> 
+                                <ul class="small mb-0"> 
+                                    <li>Pathways & patios</li> 
+                                    <li>Stonework</li> 
+                                    <li>Pressure washing</li> 
+                                </ul> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <!-- Fertilization --> 
+                     <div class="col-md-6 col-lg-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="service-icon mb-3">🌾</div> 
+                                <h3 class="h5">Fertilization</h3> 
+                                <p class="text-muted small mb-3"> Support healthy, vibrant turf with targeted fertilization for small to medium properties. </p> 
+                                <ul class="small mb-0"> 
+                                    <li>Fertilization (¼ – ½ acre)</li> 
+                                    <li>Customized to your lawn’s needs</li> 
+                                    <li>Scheduled for best seasonal impact</li> 
+                                </ul> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <!-- More --> 
+                     <div class="col-md-6 col-lg-4"> 
+                        <div class="card h-100 shadow-sm border-dashed"> 
+                            <div class="card-body"> 
+                                <div class="service-icon mb-3">➕</div> 
+                                <h3 class="h5">And more…</h3> 
+                                <p class="text-muted small mb-3"> Have something specific in mind? Let’s talk about what your property needs. </p> 
+                                <ul class="small mb-3"> 
+                                    <li>Custom projects</li> 
+                                    <li>One-time cleanups</li> 
+                                    <li>Ongoing maintenance plans</li> 
+                                </ul> <a href="#contact" class="btn btn-outline-success btn-sm"> Ask about your project </a> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </section> 
+        <!-- SERVICE AREA --> 
+        <section id="areas" class="py-5 bg-light border-top"> 
+            <div class="container"> 
+                <div class="row g-4 align-items-center"> 
+                    <div class="col-lg-6"> 
+                        <div class="section-label mb-2">Service Area</div> 
+                        <h2 class="h3 fw-bold mb-3">Proudly serving Citrus County and beyond</h2> 
+                        <p class="text-muted"> We’re based in Citrus County and regularly service homes and properties across the area. </p> 
+                        <div class="row"> 
+                            <div class="col-6"> 
+                                <ul class="small mb-2"> 
+                                    <li>Inverness</li> 
+                                    <li>Lecanto</li> 
+                                    <li>Beverly Hills</li> 
+                                    <li>Citrus Springs</li> 
+                                </ul> 
+                            </div> 
+                            <div class="col-6"> 
+                                <ul class="small mb-2"> 
+                                    <li>Floral City</li> 
+                                    <li>Hernando</li> 
+                                    <li>Crystal River</li> 
+                                    <li>Dunnellon, Homosassa, Brooksville & more</li> 
+                                </ul> 
+                            </div> 
+                        </div> 
+                        <p class="small text-muted mb-3"> Not sure if you’re in our service area? Send your address and we’ll let you know. </p> 
+                        <a href="#contact" class="btn btn-outline-success"> Check if we service your address </a> 
+                    </div> 
+                    <div class="col-lg-6"> 
+                        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm border border-success-subtle"> 
+                            <iframe title="Service area map for Citrus County, Florida" src="https://www.openstreetmap.org/export/embed.html?bbox=-82.7%2C28.7%2C-82.2%2C29.1&layer=mapnik" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </section> 
+        <!-- GALLERY --> 
+        <section id="gallery" class="py-5"> 
+            <div class="container"> 
+                <div class="row mb-4 align-items-end"> 
+                    <div class="col-md-8"> 
+                        <div class="section-label mb-2">Gallery</div> 
+                        <h2 class="h3 fw-bold mb-2">Landscaping and Lawn transformations</h2> 
+                        <p class="text-muted mb-0"> Everything from Lawns, bushes, small garden makeovers to patio, pathways and other landscaping projects.</p> 
+                    </div> 
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0"> 
+                        <a href="#contact" class="btn btn-outline-success btn-sm"> Ask for references or more photos </a>
+                    </div> 
+                </div> 
+                <div class="row g-3"> 
+                    <div class="col-6 col-md-4"> 
+                        <a class="gallery-link shadow-sm" href="gallery/">
+                            <img class="gallery-image" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20190411_151203.jpg" alt="Memorial landscaping" />
+                        </a>
+                    </div> 
+                    <div class="col-6 col-md-4"> 
+                        <a class="gallery-link shadow-sm" href="gallery/">
+                            <img class="gallery-image" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230309_174907.jpg" alt="Rock beds" />
+                        </a>
+                    </div> 
+                    <div class="col-6 col-md-4"> 
+                        <a class="gallery-link shadow-sm" href="gallery/">
+                            <img class="gallery-image" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing8.jpg" alt="Rushing8 landscape project" />
+                        </a>
+                    </div> 
+                    <div class="col-6 col-md-4"> 
+                        <a class="gallery-link shadow-sm" href="gallery/">
+                            <img class="gallery-image" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush2.jpg" alt="Long bush shaping" />
+                        </a>
+                    </div> 
+                    <div class="col-6 col-md-4"> 
+                        <a class="gallery-link shadow-sm" href="gallery/">
+                            <img class="gallery-image" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2After.jpg" alt="Highland after work" />
+                        </a>
+                    </div> 
+                    <div class="col-6 col-md-4"> 
+                        <a class="gallery-link shadow-sm" href="gallery/">
+                            <img class="gallery-image" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20240115_142306.jpg" alt="Pathway project" />
+                        </a>
+                    </div> 
+                </div> 
+                <div class="text-center mt-4"> 
+                    <a href="https://artoflawncare.com/gallery" class="btn btn-outline-success btn-sm"> View full gallery </a> 
+                </div> 
+            </div> 
+        </section> 
+        <!-- REVIEWS --> 
+        <section id="reviews" class="py-5 bg-light border-top"> 
+            <div class="container"> 
+                <div class="row mb-4 align-items-end"> 
+                    <div class="col-md-8"> 
+                        <div class="section-label mb-2">Reviews</div> 
+                        <h2 class="h3 fw-bold mb-2">What our customers are saying</h2>
+                            <div class="mt-3 mb-3">
+                                <a href="https://www.google.com/maps/place/The+Art+of+Lawn+Care/@28.8591179,-82.6785235,10z/data=!3m1!4b1!4m6!3m5!1s0x82879e3f088fc3ef:0xac759c3ac233d52!8m2!3d28.859118!4d-82.6785235!16s%2Fg%2F11ltcys41y?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm" > Our Google Profile </a> 
+                            </div> 
+                        <p class="text-muted mb-0"> We’re proud of our work and even prouder of the trust our clients place in us. </p> 
+                    </div> 
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0"> 
+                        <a href="https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm" > Leave a Google Review </a> 
+                    </div> 
+                </div> 
+                <div class="row g-4"> 
+                    <!-- Static sample cards; you can replace with real quotes --> 
+                    <!--
+                     <div class="col-md-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="review-stars mb-1">★★★★★</div> 
+                                <p class="small mb-2"> “Reliable, professional, and my yard has never looked better. Shows up when promised and pays attention to detail.” </p> 
+                                <p class="small text-muted mb-0">– Homeowner in Inverness</p> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="review-stars mb-1">★★★★★</div> 
+                                <p class="small mb-2"> “Great communication and fair pricing. They handled everything from mowing to hedge trimming and clean up.” </p> 
+                                <p class="small text-muted mb-0">– Homeowner in Lecanto</p> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="card-body"> 
+                                <div class="review-stars mb-1">★★★★★</div> 
+                                <p class="small mb-2"> “You can tell they take pride in their work. Our property looks sharp every time they leave.” </p> 
+                                <p class="small text-muted mb-0">– Homeowner in Beverly Hills</p> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    -->
+                </div> 
+                <div class="text-center mt-4 pt-2">
+                    <p class="small text-muted mb-2"> Scan the QR code or use the button above to leave your own review. </p>
+                    <a href="https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank" rel="noopener noreferrer" class="d-inline-block mt-2">
+                        <img src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ArtOfLawnCareLLC-GoogleReview.png" alt="Google Review QR code" class="img-fluid rounded shadow-sm d-block mx-auto" style="max-width: 180px;" />
+                    </a>
+                </div> 
+            </div> 
+        </section> 
+        <!-- CONTACT --> 
+        <section id="contact" class="py-5"> 
+            <div class="container"> 
+                <div class="row justify-content-center"> 
+                    <div class="col-lg-10"> 
+                        <div class="contact-bg p-4 p-md-5 shadow-lg"> 
+                            <div class="row g-4"> 
+                                <div class="col-md-6"> 
+                                    <div class="section-label mb-2 text-success-emphasis">Contact</div> 
+                                    <h2 class="h3 fw-bold mb-3">Ready for an estimate or have a question?</h2> 
+                                    <p class="mb-3"> Tell us a bit about your property and what you’re looking for. We’ll get back to you as soon as possible. </p> 
+                                    <ul class="list-unstyled small mb-3"> 
+                                        <li><strong>Phone:</strong> 
+                                            <a href="tel:13524191307" class="link-light">352-419-1307</a>
+                                        </li> 
+                                        <li><strong>Email:</strong> 
+                                            <a href="mailto:artoflawncarellc@gmail.com" class="link-light">artoflawncarellc@gmail.com</a>
+                                        </li> 
+                                        <li><strong>Facebook:</strong> Find us at <a href="https://www.facebook.com/profile.php?id=61564736883280" class="link-light" target="_blank" rel="noopener noreferrer">The Art of Lawn Care and Landscaping</a></li> 
+                                    </ul> 
+                                    <p class="small mb-0 contact-note"> Call or text anytime. If we don't answer, leave a message and we’ll get back to you shortly. </p> 
+                                </div> 
+                                <div id="contacts" class="col-md-6"> 
+                                                 <form id="contact-form" action="https://formsubmit.co/d4b38a5faaed1da3b4777e4ad4e6cb51" method="POST" accept-charset="UTF-8" name="EmailForm"> 
+                                                     <input type="hidden" name="_subject" value="New estimate request from The Art of Lawn Care website" />
+                                                     <input type="hidden" name="_template" value="table" />
+                                                     <input type="hidden" name="_captcha" value="false" />
+                                                     <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off" />
+                                        <div class="mb-3"> 
+                                            <label for="name" class="form-label">Name</label> 
+                                            <input type="text" class="form-control" id="name" name="Contact-Name" placeholder="Your Name" required /> 
+                                        </div> 
+                                        <div class="mb-3"> 
+                                            <label for="email" class="form-label">Email</label> 
+                                            <input type="email" class="form-control" id="email" name="Contact-Email" placeholder="Your E-mail" required /> 
+                                        </div> 
+                                        <div class="mb-3"> 
+                                            <label for="form-input-area" class="form-label">Message</label> 
+                                            <textarea class="form-control" id="form-input-area" name="Contact-Message" rows="6" placeholder="Your Message" required></textarea> 
+                                        </div> 
+                                        <p id="message-error" class="small text-warning mb-3" role="alert" aria-live="polite"></p>
+                                        <p id="message-success" class="small text-success mb-3" role="status" aria-live="polite"></p>
+                                        <button id="submitButton" type="submit" class="btn btn-brand w-100"><strong>Send</strong></button> 
+                                    </form> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </section> 
+        <!-- FOOTER --> 
+        <footer class="footer mt-4"> 
+            <div class="container"> 
+                <div class="row gy-3 align-items-center"> 
+                    <div class="col-md-6"> 
+                        <div class="small"> © 2025 The Art of Lawn Care LLC. All rights reserved. </div> 
+                        <div class="small footer-mint"> Proudly serving Citrus County and surrounding areas. </div>
+                    </div> 
+                    <div class="col-md-6 text-md-end"> 
+                        <div class="small"> 
+                            <a href="#top">Back to top</a> <span class="mx-2">•</span> 
+                            <a href="#services">Services</a> <span class="mx-2">•</span> 
+                            <a href="tel:13524191307">Contact</a> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </footer> 
+        <div class="modal fade" id="mainGalleryLightbox" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content bg-dark border border-success border-opacity-25">
+                    <div class="modal-header border-0 pb-0">
+                        <h2 class="modal-title fs-6 text-light">Photo Preview</h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="col" id="col-3"><img class="list-img" id="img7" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20160624_092602.jpg" alt="Bushes"></div>
+                    <div class="modal-body pt-2">
+                        <img id="mainLightboxImage" class="lightbox-image" src="" alt="" />
+                    </div>
+                </div>
             </div>
-        <p id="bookNow">Give us a call!!!<br>Email or msg anytime!!!</p>
         </div>
-        <div id="photo-text">Photo's:</div>
-        <section class="imgContainer" id="images"> <!--Image showcase link to gallery sub-dir-->
-            <a class="imgBtn" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">
-                <img class="zoom" id="img4" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20190411_151203.jpg" alt="Memorial">
-            </a>
-            <a class="imgBtn" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">
-                <img class="zoom" id="img9" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/20230309_174907.jpg" alt="Rock beds">
-            </a>
-            <a class="imgBtn" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">
-                <img class="zoom" id="img30" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Rushing8.jpg" alt="Rushing8">
-            </a>
-            <a class="imgBtn" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">
-                <img class="fadeImg" id="img38" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/LongBush2.jpg" alt="LongBush2">
-            </a>
-            <a class="imgBtn" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">
-                <img class="fadeImg" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/Highland2After.jpg" alt="Highland2After">
-            </a>
-            <br>
-            <a class="imgBtnTxt" href="https://artoflawncare.com/gallery" target="_blank" rel="noopener noreferrer">Click to see more</a>
-        </section>
-        <div id="review">
-            <p id="reviewSectionTitle">Review Us</p>
-            <p id="reviewBody">Review Us At:<br><a class="review_http" href="Https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank">Https://g.page/r/CVI9I6zDWccKEAI/review</a><br><br> Or scan the QR code with your mobile device</p>
-            <a class="qrBtn" href="Https://g.page/r/CVI9I6zDWccKEAI/review" target="_blank">
-                <img class="QR" id="img43" src="https://raw.githubusercontent.com/ArtBerger88/ArtRepo/main/ArtOfLawnCareLLC-GoogleReview.png" alt="QRcode">
-            </a>
-        <section id="form"> <!-- form for submiting a message to email-->
-            <div id="contactUs-FormTitle">Contact Us:</div><br>
-            <form id="contact-form" 
-            action="process-form" method="POST"
-            enctype="multipart/form-data"
-            name="EmailForm">
-                <div id="divider"></div>
-        Name:<br>
-                <input class="form-input" type="text" size="19" name="Contact-Name" placeholder="Your Name" required><br><br>
-        Email:<br>
-                <input class="form-input" type="email" name="Contact-Email" placeholder="Your E-mail" required><br><br>
-        <!-- Commented out for now
-         
-        Phone:<br>
-            <input type="tel" class="form-input" id="phone" name="phone" placeholder="352-555-1234" required><br><br>   
-        What are you looking for?<br>
-            <select class="form-input" id="serviceType" name="serviceType"> 
-                <option value="">Select an option</option> 
-                <option value="recurring">Recurring lawn care</option> 
-                <option value="cleanup">One-time cleanup</option> 
-                <option value="landscaping">Landscaping / beds / hedges</option> 
-                <option value="enhancements">Pathways / stonework / enhancements</option> 
-                <option value="other">Something else</option> 
-            </select> 
-        <br><br>
-         
-        -->
-        Message:<br> 
-                <textarea id="form-input-area" name="Contact-Message" rows="6" cols="20" placeholder="Your Message"></textarea>
-                <p id="message-error"></p><br>
-            <button id="submitButton" type="submit" value="Submit"><strong>Send</strong></button>
-            </form>
-        </section> <!--Contact Info-->
-        <p id="contact-section">Our Contact Info:</p>
-        <p id="contacts">I can be reached via call or text anytime at <a class="tele" href="tel:352-419-1307">352-419-1307</a><br>By email at <a class="email" href="mailto:artoflawncarellc@gmail.com">artoflawncarellc@gmail.com</a><br>Find us on facebook @<br><a class="fb" target="_blank" href="https://www.facebook.com/profile.php?id=61564736883280">The Art of Lawn Care and Landscaping</a></p>
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="index.js"></script>
-    </body>
-    <footer>
-        &copy; 2025 The Art of Lawn Care LLC
-    </footer>
-</html>    
+        <!-- Bootstrap JS --> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    </body> 
+</html>
