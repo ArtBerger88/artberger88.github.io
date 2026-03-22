@@ -567,6 +567,8 @@
                                                      <input type="hidden" name="_template" value="table" />
                                                      <input type="hidden" name="_captcha" value="false" />
                                                      <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off" />
+                                                     <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" />
+                                                     <input type="hidden" name="form_started_at" id="form-started-at" value="" />
                                         <div class="mb-3"> 
                                             <label for="name" class="form-label">Name</label> 
                                             <input type="text" class="form-control" id="name" name="Contact-Name" placeholder="Your Name" required /> 
@@ -578,6 +580,11 @@
                                         <div class="mb-3"> 
                                             <label for="form-input-area" class="form-label">Message</label> 
                                             <textarea class="form-control" id="form-input-area" name="Contact-Message" rows="6" placeholder="Your Message" required></textarea> 
+                                            <div class="form-text">Please do not include links in your message.</div>
+                                        </div> 
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" value="yes" id="human-check" required>
+                                            <label class="form-check-label" for="human-check">I am a real person.</label>
                                         </div> 
                                         <p id="message-error" class="small text-warning mb-3" role="alert" aria-live="polite"></p>
                                         <p id="message-success" class="small text-success mb-3" role="status" aria-live="polite"></p>
